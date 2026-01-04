@@ -1,5 +1,7 @@
-import bookCover from "@assets/Cover_WIP_1764948752780.jpg";
-import epubPreview from "@assets/EPUB_IMG-20250203-WA0002.jpg";
+// @ts-expect-error - vite-imagetools query params not recognized by TS module resolution
+import bookCover from "@assets/Cover_WIP_1764948752780.jpg?format=webp;jpg&w=600&quality=80";
+// @ts-expect-error - vite-imagetools query params not recognized by TS module resolution
+import epubPreview from "@assets/EPUB_IMG-20250203-WA0002.jpg?format=webp;jpg&w=600&quality=80";
 import {
   Carousel,
   CarouselContent,
@@ -10,12 +12,12 @@ import {
 
 const PREVIEW_IMAGES = [
   {
-    src: bookCover,
+    sources: bookCover,
     alt: "Book Cover - Un Andrés Más",
     label: "Portada",
   },
   {
-    src: epubPreview,
+    sources: epubPreview,
     alt: "Ebook Preview - Un Andrés Más",
     label: "Vista interior",
   },
@@ -34,15 +36,19 @@ export function BookPreviewCarousel() {
       >
         <CarouselContent>
           {PREVIEW_IMAGES.map((image, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem key={image.sources[0]}>
               <div className="p-1">
                 <div className="relative aspect-[2/3] overflow-hidden rounded-lg bg-muted shadow-2xl">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="h-full w-full object-cover"
-                    data-testid={`img-preview-${index}`}
-                  />
+                  <picture>
+                    <source srcSet={image.sources[0]} type="image/webp" />
+                    <img
+                      src={image.sources[1]}
+                      alt={image.alt}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      data-testid={`img-preview-${index}`}
+                    />
+                  </picture>
                 </div>
               </div>
             </CarouselItem>

@@ -1,4 +1,5 @@
-import authorPhoto from "@assets/autorBW_1764948728536.jpeg";
+// @ts-expect-error - vite-imagetools query params not recognized by TS module resolution
+import authorPhotos from "@assets/autorBW_1764948728536.jpeg?format=webp;jpg&w=400&quality=80";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Section, SectionHeading } from "@/components/ui/section";
@@ -19,11 +20,15 @@ export default function AboutAuthorSection() {
       </SectionHeading>
 
       <Avatar className="mx-auto mb-8 h-32 w-32 border-4 border-border md:h-40 md:w-40">
-        <AvatarImage
-          src={authorPhoto}
-          alt="Andrés David Serrano - Author"
-          data-testid="img-author-photo"
-        />
+        <picture>
+          <source srcSet={authorPhotos[0]} type="image/webp" />
+          <AvatarImage
+            src={authorPhotos[1]}
+            alt="Andrés David Serrano - Author"
+            loading="lazy"
+            data-testid="img-author-photo"
+          />
+        </picture>
         <AvatarFallback className="text-2xl font-bold">AD</AvatarFallback>
       </Avatar>
 

@@ -1,4 +1,5 @@
-import heroImage from "@assets/Cotopaxi_1764948376653.jpg";
+// @ts-expect-error - vite-imagetools query params not recognized by TS module resolution
+import heroImage from "@assets/Cotopaxi_1764948376653.jpg?format=webp&w=1920&quality=80";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useScrollToSection } from "@/hooks/use-scroll-to-section";
