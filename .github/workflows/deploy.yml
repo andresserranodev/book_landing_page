@@ -43,6 +43,9 @@ jobs:
           echo "index.html exists:"
           test -f dist/public/index.html && echo "YES" || echo "NO"
 
+      - name: Clean build artifacts
+        run: find dist/public -name ".DS_Store" -delete || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
