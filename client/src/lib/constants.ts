@@ -1,4 +1,8 @@
-import { SiInstagram, SiFacebook, SiX } from "react-icons/si";
+import {
+  InstagramIcon,
+  FacebookIcon,
+  XIcon,
+} from "@/components/icons/SocialIcons";
 import type { Language } from "./translations";
 
 export const SITE_CONFIG = {
@@ -7,9 +11,14 @@ export const SITE_CONFIG = {
 } as const;
 
 export const SOCIAL_LINKS = [
-  { name: "Instagram", icon: SiInstagram, href: "#", testId: "link-instagram" },
-  { name: "Facebook", icon: SiFacebook, href: "#", testId: "link-facebook" },
-  { name: "X", icon: SiX, href: "#", testId: "link-twitter" },
+  {
+    name: "Instagram",
+    icon: InstagramIcon,
+    href: "#",
+    testId: "link-instagram",
+  },
+  { name: "Facebook", icon: FacebookIcon, href: "#", testId: "link-facebook" },
+  { name: "X", icon: XIcon, href: "#", testId: "link-twitter" },
 ] as const;
 
 export const NAV_SECTIONS = [
