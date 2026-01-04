@@ -4,6 +4,8 @@ import type { Language } from "./translations";
 export const SITE_CONFIG = {
   title: "Un Andrés Más",
   email: "andres.david.s117@gmail.com",
+  preorderFormUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSc0GMdu5nHVcQhnMjNuPqcQWUbzWzK_jo-3kJejArSuej0k-A/viewform?usp=dialog",
 } as const;
 
 export const SOCIAL_LINKS = [

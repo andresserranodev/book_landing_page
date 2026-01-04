@@ -2,11 +2,10 @@
 import heroImage from "@assets/Cotopaxi_1764948376653.jpg?format=webp&w=1920&quality=80";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
-import { useScrollToSection } from "@/hooks/use-scroll-to-section";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const { scrollToSection } = useScrollToSection();
 
   return (
     <section
@@ -35,11 +34,17 @@ export default function HeroSection() {
         </p>
         <Button
           size="lg"
-          onClick={() => scrollToSection("preorder")}
+          asChild
           className="border border-primary-border bg-primary/90 px-8 py-4 text-lg font-semibold backdrop-blur-md"
           data-testid="button-hero-preorder"
         >
-          {t.hero.preorderButton}
+          <a
+            href={SITE_CONFIG.preorderFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.hero.preorderButton}
+          </a>
         </Button>
       </div>
     </section>

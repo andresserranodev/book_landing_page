@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Section, SectionHeading } from "@/components/ui/section";
-
-const GOOGLE_FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSc0GMdu5nHVcQhnMjNuPqcQWUbzWzK_jo-3kJejArSuej0k-A/viewform?usp=dialog";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function PreOrderSection() {
   const { t } = useLanguage();
@@ -27,7 +25,11 @@ export default function PreOrderSection() {
 
       <div className="mx-auto mb-6 flex justify-center">
         <Button asChild className="px-6" data-testid="button-submit-preorder">
-          <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+          <a
+            href={SITE_CONFIG.preorderFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {t.preorder.joinButton}
           </a>
         </Button>
