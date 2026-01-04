@@ -427,12 +427,10 @@
 <a name='L362'></a><a href='#L362'>362</a>
 <a name='L363'></a><a href='#L363'>363</a>
 <a name='L364'></a><a href='#L364'>364</a>
-<a name='L365'></a><a href='#L365'>365</a>
-<a name='L366'></a><a href='#L366'>366</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L365'></a><a href='#L365'>365</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -793,53 +791,52 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client";
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import * as React from "react"</span>
-<span class="cstat-no" title="statement not covered" >import * as RechartsPrimitive from "recharts"</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils"</span>
+<span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import * as RechartsPrimitive from "recharts";</span>
+<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils";</span>
 &nbsp;
 // Format: { THEME_NAME: CSS_SELECTOR }
-const THEMES = <span class="cstat-no" title="statement not covered" >{ light: "", dark: ".dark" } as const</span>
+const THEMES = <span class="cstat-no" title="statement not covered" >{ light: "", dark: ".dark" } as const;</span>
 &nbsp;
 export type ChartConfig = {
   [k in string]: {
-    label?: React.ReactNode
-    icon?: React.ComponentType
+    label?: React.ReactNode;
+    icon?: React.ComponentType;
   } &amp; (
     | { color?: string; theme?: never }
     | { color?: never; theme: Record&lt;keyof typeof THEMES, string&gt; }
-  )
-}
+  );
+};
 &nbsp;
 type ChartContextProps = {
-  config: ChartConfig
-}
+  config: ChartConfig;
+};
 &nbsp;
-const ChartContext = <span class="cstat-no" title="statement not covered" >React.createContext&lt;ChartContextProps | null&gt;(null)</span>
+const ChartContext = <span class="cstat-no" title="statement not covered" >React.createContext&lt;ChartContextProps | null&gt;(null);</span>
 &nbsp;
 function <span class="fstat-no" title="function not covered" >useChart(</span>) {
-  const context = <span class="cstat-no" title="statement not covered" >React.useContext(ChartContext)</span>
+  const context = <span class="cstat-no" title="statement not covered" >React.useContext(ChartContext);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!context) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error("useChart must be used within a &lt;ChartContainer /&gt;")</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error("useChart must be used within a &lt;ChartContainer /&gt;");</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return context</span>
+<span class="cstat-no" title="statement not covered" >  return context;</span>
 }
 &nbsp;
 const ChartContainer = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   HTMLDivElement,
   React.ComponentProps&lt;"div"&gt; &amp; {
-    config: ChartConfig
+    config: ChartConfig;
     children: React.ComponentProps&lt;
       typeof RechartsPrimitive.ResponsiveContainer
-    &gt;["children"]
+    &gt;["children"];
   }
 &gt;(<span class="fstat-no" title="function not covered" >({</span> id, className, children, config<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }, r</span>ef) =&gt; {
-  const uniqueId = <span class="cstat-no" title="statement not covered" >React.useId()</span>
-  const chartId = <span class="cstat-no" title="statement not covered" >`chart-${id || uniqueId.replace(/:/g, "")}`</span>
+  const uniqueId = <span class="cstat-no" title="statement not covered" >React.useId();</span>
+  const chartId = <span class="cstat-no" title="statement not covered" >`chart-${id || uniqueId.replace(/:/g, "")}`;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;ChartContext.Provider value={{ config }}&gt;
@@ -858,17 +855,17 @@ const ChartContainer = <span class="cstat-no" title="statement not covered" >Rea
         &lt;/RechartsPrimitive.ResponsiveContainer&gt;
       &lt;/div&gt;
     &lt;/ChartContext.Provider&gt;
-  )
-})
-<span class="cstat-no" title="statement not covered" >ChartContainer.displayName = "Chart"</span>
+  );
+});
+<span class="cstat-no" title="statement not covered" >ChartContainer.displayName = "Chart";</span>
 &nbsp;
 const ChartStyle = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> id, config }: { id: string; config: ChartConfig }) =&gt; {</span>
   const colorConfig = <span class="cstat-no" title="statement not covered" >Object.entries(config).filter(</span>
 <span class="fstat-no" title="function not covered" >    ([</span>, config]) =&gt; <span class="cstat-no" title="statement not covered" >config.theme || config.color</span>
-  )
+  );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!colorConfig.length) {</span>
-<span class="cstat-no" title="statement not covered" >    return null</span>
+<span class="cstat-no" title="statement not covered" >    return null;</span>
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
@@ -882,8 +879,8 @@ ${colorConfig
   .map(<span class="fstat-no" title="function not covered" >([</span>key, itemConfig]) =&gt; {
     const color =
 <span class="cstat-no" title="statement not covered" >      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||</span>
-      itemConfig.color
-<span class="cstat-no" title="statement not covered" >    return color ? `  --color-${key}: ${color};` : null</span>
+      itemConfig.color;
+<span class="cstat-no" title="statement not covered" >    return color ? `  --color-${key}: ${color};` : null;</span>
   })
   .join("\n")}
 }
@@ -892,20 +889,20 @@ ${colorConfig
           .join("\n"),
       }}
     /&gt;
-  )
-}
+  );
+};
 &nbsp;
-const ChartTooltip = <span class="cstat-no" title="statement not covered" >RechartsPrimitive.Tooltip</span>
+const ChartTooltip = <span class="cstat-no" title="statement not covered" >RechartsPrimitive.Tooltip;</span>
 &nbsp;
 const ChartTooltipContent = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   HTMLDivElement,
   React.ComponentProps&lt;typeof RechartsPrimitive.Tooltip&gt; &amp;
     React.ComponentProps&lt;"div"&gt; &amp; {
-      hideLabel?: boolean
-      hideIndicator?: boolean
-      indicator?: "line" | "dot" | "dashed"
-      nameKey?: string
-      labelKey?: string
+      hideLabel?: boolean;
+      hideIndicator?: boolean;
+      indicator?: "line" | "dot" | "dashed";
+      nameKey?: string;
+      labelKey?: string;
     }
 &gt;(
 <span class="fstat-no" title="function not covered" >  (</span>
@@ -926,34 +923,34 @@ const ChartTooltipContent = <span class="cstat-no" title="statement not covered"
     },
     ref
   ) =&gt; {
-    const { config } = <span class="cstat-no" title="statement not covered" >useChart()</span>
+    const { config } = <span class="cstat-no" title="statement not covered" >useChart();</span>
 &nbsp;
     const tooltipLabel = <span class="cstat-no" title="statement not covered" >React.useMemo(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (hideLabel || !payload?.length) {</span>
-<span class="cstat-no" title="statement not covered" >        return null</span>
+<span class="cstat-no" title="statement not covered" >        return null;</span>
       }
 &nbsp;
-      const [item] = <span class="cstat-no" title="statement not covered" >payload</span>
-      const key = <span class="cstat-no" title="statement not covered" >`${labelKey || item?.dataKey || item?.name || "value"}`</span>
-      const itemConfig = <span class="cstat-no" title="statement not covered" >getPayloadConfigFromPayload(config, item, key)</span>
+      const [item] = <span class="cstat-no" title="statement not covered" >payload;</span>
+      const key = <span class="cstat-no" title="statement not covered" >`${labelKey || item?.dataKey || item?.name || "value"}`;</span>
+      const itemConfig = <span class="cstat-no" title="statement not covered" >getPayloadConfigFromPayload(config, item, key);</span>
       const value =
 <span class="cstat-no" title="statement not covered" >        !labelKey &amp;&amp; typeof label === "string"</span>
           ? config[label as keyof typeof config]?.label || label
-          : itemConfig?.label
+          : itemConfig?.label;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (labelFormatter) {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
           &lt;div className={cn("font-medium", labelClassName)}&gt;
             {labelFormatter(value, payload)}
           &lt;/div&gt;
-        )
+        );
       }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (!value) {</span>
-<span class="cstat-no" title="statement not covered" >        return null</span>
+<span class="cstat-no" title="statement not covered" >        return null;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return &lt;div className={cn("font-medium", labelClassName)}&gt;{value}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >      return &lt;div className={cn("font-medium", labelClassName)}&gt;{value}&lt;/div&gt;;</span>
     }, [
       label,
       labelFormatter,
@@ -962,13 +959,13 @@ const ChartTooltipContent = <span class="cstat-no" title="statement not covered"
       labelClassName,
       config,
       labelKey,
-    ])
+    ]);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!active || !payload?.length) {</span>
-<span class="cstat-no" title="statement not covered" >      return null</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
     }
 &nbsp;
-    const nestLabel = <span class="cstat-no" title="statement not covered" >payload.length === 1 &amp;&amp; indicator !== "dot"</span>
+    const nestLabel = <span class="cstat-no" title="statement not covered" >payload.length === 1 &amp;&amp; indicator !== "dot";</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return (</span>
       &lt;div
@@ -981,9 +978,9 @@ const ChartTooltipContent = <span class="cstat-no" title="statement not covered"
         {!nestLabel ? tooltipLabel : null}
         &lt;div className="grid gap-1.5"&gt;
           {payload.map(<span class="fstat-no" title="function not covered" >(i</span>tem, index) =&gt; {
-            const key = <span class="cstat-no" title="statement not covered" >`${nameKey || item.name || item.dataKey || "value"}`</span>
-            const itemConfig = <span class="cstat-no" title="statement not covered" >getPayloadConfigFromPayload(config, item, key)</span>
-            const indicatorColor = <span class="cstat-no" title="statement not covered" >color || item.payload.fill || item.color</span>
+            const key = <span class="cstat-no" title="statement not covered" >`${nameKey || item.name || item.dataKey || "value"}`;</span>
+            const itemConfig = <span class="cstat-no" title="statement not covered" >getPayloadConfigFromPayload(config, item, key);</span>
+            const indicatorColor = <span class="cstat-no" title="statement not covered" >color || item.payload.fill || item.color;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >            return (</span>
               &lt;div
@@ -1042,33 +1039,33 @@ const ChartTooltipContent = <span class="cstat-no" title="statement not covered"
                   &lt;/&gt;
                 )}
               &lt;/div&gt;
-            )
+            );
           })}
         &lt;/div&gt;
       &lt;/div&gt;
-    )
+    );
   }
-)
-<span class="cstat-no" title="statement not covered" >ChartTooltipContent.displayName = "ChartTooltip"</span>
+);
+<span class="cstat-no" title="statement not covered" >ChartTooltipContent.displayName = "ChartTooltip";</span>
 &nbsp;
-const ChartLegend = <span class="cstat-no" title="statement not covered" >RechartsPrimitive.Legend</span>
+const ChartLegend = <span class="cstat-no" title="statement not covered" >RechartsPrimitive.Legend;</span>
 &nbsp;
 const ChartLegendContent = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   HTMLDivElement,
   React.ComponentProps&lt;"div"&gt; &amp;
     Pick&lt;RechartsPrimitive.LegendProps, "payload" | "verticalAlign"&gt; &amp; {
-      hideIcon?: boolean
-      nameKey?: string
+      hideIcon?: boolean;
+      nameKey?: string;
     }
 &gt;(
 <span class="fstat-no" title="function not covered" >  (</span>
     { className, hideIcon = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span> payload, verticalAlign = <span class="branch-0 cbranch-no" title="branch not covered" >"bottom",</span> nameKey },
     ref
   ) =&gt; {
-    const { config } = <span class="cstat-no" title="statement not covered" >useChart()</span>
+    const { config } = <span class="cstat-no" title="statement not covered" >useChart();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!payload?.length) {</span>
-<span class="cstat-no" title="statement not covered" >      return null</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -1081,8 +1078,8 @@ const ChartLegendContent = <span class="cstat-no" title="statement not covered" 
         )}
       &gt;
         {payload.map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; {
-          const key = <span class="cstat-no" title="statement not covered" >`${nameKey || item.dataKey || "value"}`</span>
-          const itemConfig = <span class="cstat-no" title="statement not covered" >getPayloadConfigFromPayload(config, item, key)</span>
+          const key = <span class="cstat-no" title="statement not covered" >`${nameKey || item.dataKey || "value"}`;</span>
+          const itemConfig = <span class="cstat-no" title="statement not covered" >getPayloadConfigFromPayload(config, item, key);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >          return (</span>
             &lt;div
@@ -1103,13 +1100,13 @@ const ChartLegendContent = <span class="cstat-no" title="statement not covered" 
               )}
               {itemConfig?.label}
             &lt;/div&gt;
-          )
+          );
         })}
       &lt;/div&gt;
-    )
+    );
   }
-)
-<span class="cstat-no" title="statement not covered" >ChartLegendContent.displayName = "ChartLegend"</span>
+);
+<span class="cstat-no" title="statement not covered" >ChartLegendContent.displayName = "ChartLegend";</span>
 &nbsp;
 // Helper to extract item config from a payload.
 function <span class="fstat-no" title="function not covered" >getPayloadConfigFromPayload(</span>
@@ -1118,7 +1115,7 @@ function <span class="fstat-no" title="function not covered" >getPayloadConfigFr
   key: string
 ) {
 <span class="cstat-no" title="statement not covered" >  if (typeof payload !== "object" || payload === null) {</span>
-<span class="cstat-no" title="statement not covered" >    return undefined</span>
+<span class="cstat-no" title="statement not covered" >    return undefined;</span>
   }
 &nbsp;
   const payloadPayload =
@@ -1126,15 +1123,15 @@ function <span class="fstat-no" title="function not covered" >getPayloadConfigFr
     typeof payload.payload === "object" &amp;&amp;
     payload.payload !== null
       ? payload.payload
-      : undefined
+      : undefined;
 &nbsp;
-  let configLabelKey: string = <span class="cstat-no" title="statement not covered" >key</span>
+  let configLabelKey: string = <span class="cstat-no" title="statement not covered" >key;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (</span>
     key in payload &amp;&amp;
     typeof payload[key as keyof typeof payload] === "string"
   ) {
-<span class="cstat-no" title="statement not covered" >    configLabelKey = payload[key as keyof typeof payload] as string</span>
+<span class="cstat-no" title="statement not covered" >    configLabelKey = payload[key as keyof typeof payload] as string;</span>
   } else <span class="cstat-no" title="statement not covered" >if (</span>
     payloadPayload &amp;&amp;
     key in payloadPayload &amp;&amp;
@@ -1142,12 +1139,12 @@ function <span class="fstat-no" title="function not covered" >getPayloadConfigFr
   ) {
 <span class="cstat-no" title="statement not covered" >    configLabelKey = payloadPayload[</span>
       key as keyof typeof payloadPayload
-    ] as string
+    ] as string;
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return configLabelKey in config</span>
     ? config[configLabelKey]
-    : config[key as keyof typeof config]
+    : config[key as keyof typeof config];
 }
 &nbsp;
 export {
@@ -1157,7 +1154,7 @@ export {
 <span class="cstat-no" title="statement not covered" >  ChartLegend,</span>
 <span class="cstat-no" title="statement not covered" >  ChartLegendContent,</span>
 <span class="cstat-no" title="statement not covered" >  ChartStyle,</span>
-}
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -1165,7 +1162,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

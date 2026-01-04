@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
@@ -111,11 +111,12 @@
 <a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,50 +153,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import authorPhoto from "@assets/autorBW_1764948728536.jpeg";</span>
+<span class="cstat-no" title="statement not covered" >import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";</span>
 <span class="cstat-no" title="statement not covered" >import { useLanguage } from "@/lib/LanguageContext";</span>
-<span class="cstat-no" title="statement not covered" >import authorPhoto from "@assets/autorBW_1764948728536.jpeg";</span>
+<span class="cstat-no" title="statement not covered" >import { Section, SectionHeading } from "@/components/ui/section";</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >export default function <span class="fstat-no" title="function not covered" >A</span>boutAuthorSection(</span>) {
   const { t } = <span class="cstat-no" title="statement not covered" >useLanguage();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;section
+    &lt;Section
       id="author"
-      className="py-16 md:py-24 lg:py-32 bg-card"
-      data-testid="section-about-author"
+      testId="section-about-author"
+      maxWidth="max-w-3xl"
+      background="bg-card"
+      centered
     &gt;
-      &lt;div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center"&gt;
-        &lt;h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-foreground"
-          data-testid="text-author-heading"
+      &lt;SectionHeading testId="text-author-heading" marginBottom="mb-8"&gt;
+        {t.aboutAuthor.heading}
+      &lt;/SectionHeading&gt;
+&nbsp;
+      &lt;Avatar className="mx-auto mb-8 h-32 w-32 border-4 border-border md:h-40 md:w-40"&gt;
+        &lt;AvatarImage
+          src={authorPhoto}
+          alt="Andrés David Serrano - Author"
+          data-testid="img-author-photo"
+        /&gt;
+        &lt;AvatarFallback className="text-2xl font-bold"&gt;AD&lt;/AvatarFallback&gt;
+      &lt;/Avatar&gt;
+&nbsp;
+      &lt;div className="space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg"&gt;
+        &lt;p data-testid="text-author-bio-1"&gt;{t.aboutAuthor.bio1}&lt;/p&gt;
+        &lt;p data-testid="text-author-bio-2"&gt;{t.aboutAuthor.bio2}&lt;/p&gt;
+        &lt;p
+          className="pt-4 text-sm font-medium italic text-foreground/80 md:text-base"
+          data-testid="text-author-attribution"
         &gt;
-          {t.aboutAuthor.heading}
-        &lt;/h2&gt;
-        
-        &lt;Avatar className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 border-4 border-border"&gt;
-          &lt;AvatarImage
-            src={authorPhoto}
-            alt="Andrés David Serrano - Author"
-            data-testid="img-author-photo"
-          /&gt;
-          &lt;AvatarFallback className="text-2xl font-bold"&gt;AD&lt;/AvatarFallback&gt;
-        &lt;/Avatar&gt;
-        
-        &lt;div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed"&gt;
-          &lt;p data-testid="text-author-bio-1"&gt;
-            {t.aboutAuthor.bio1}
-          &lt;/p&gt;
-          &lt;p data-testid="text-author-bio-2"&gt;
-            {t.aboutAuthor.bio2}
-          &lt;/p&gt;
-          &lt;p className="text-sm md:text-base italic font-medium pt-4 text-foreground/80" data-testid="text-author-attribution"&gt;
-            {t.aboutAuthor.attribution.split(":")[0]}: &lt;span className="font-serif font-bold"&gt;{t.aboutAuthor.attribution.split(":")[1]}&lt;/span&gt;
-          &lt;/p&gt;
-        &lt;/div&gt;
+          {t.aboutAuthor.attribution.split(":")[0]}:{" "}
+          &lt;span className="font-serif font-bold"&gt;
+            {t.aboutAuthor.attribution.split(":")[1]}
+          &lt;/span&gt;
+        &lt;/p&gt;
       &lt;/div&gt;
-    &lt;/section&gt;
+    &lt;/Section&gt;
   );
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -205,7 +205,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

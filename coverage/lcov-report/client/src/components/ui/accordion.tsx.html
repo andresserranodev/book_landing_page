@@ -118,11 +118,9 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -175,13 +173,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as React from "react"</span>
-<span class="cstat-no" title="statement not covered" >import * as AccordionPrimitive from "@radix-ui/react-accordion"</span>
-<span class="cstat-no" title="statement not covered" >import { ChevronDown } from "lucide-react"</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import * as AccordionPrimitive from "@radix-ui/react-accordion";</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronDown } from "lucide-react";</span>
+<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils";</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils"</span>
-&nbsp;
-const Accordion = <span class="cstat-no" title="statement not covered" >AccordionPrimitive.Root</span>
+const Accordion = <span class="cstat-no" title="statement not covered" >AccordionPrimitive.Root;</span>
 &nbsp;
 const AccordionItem = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof AccordionPrimitive.Item&gt;,
@@ -192,8 +189,8 @@ const AccordionItem = <span class="cstat-no" title="statement not covered" >Reac
     className={cn("border-b", className)}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >AccordionItem.displayName = "AccordionItem"</span>
+));
+<span class="cstat-no" title="statement not covered" >AccordionItem.displayName = "AccordionItem";</span>
 &nbsp;
 const AccordionTrigger = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof AccordionPrimitive.Trigger&gt;,
@@ -212,8 +209,8 @@ const AccordionTrigger = <span class="cstat-no" title="statement not covered" >R
       &lt;ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" /&gt;
     &lt;/AccordionPrimitive.Trigger&gt;
   &lt;/AccordionPrimitive.Header&gt;
-))
-<span class="cstat-no" title="statement not covered" >AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;</span>
 &nbsp;
 const AccordionContent = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof AccordionPrimitive.Content&gt;,
@@ -226,11 +223,11 @@ const AccordionContent = <span class="cstat-no" title="statement not covered" >R
   &gt;
     &lt;div className={cn("pb-4 pt-0", className)}&gt;{children}&lt;/div&gt;
   &lt;/AccordionPrimitive.Content&gt;
-))
+));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >AccordionContent.displayName = AccordionPrimitive.Content.displayName</span>
+<span class="cstat-no" title="statement not covered" >AccordionContent.displayName = AccordionPrimitive.Content.displayName;</span>
 &nbsp;
-export { <span class="cstat-no" title="statement not covered" >Accordion,</span> <span class="cstat-no" title="statement not covered" >AccordionItem,</span> <span class="cstat-no" title="statement not covered" >AccordionTrigger,</span> <span class="cstat-no" title="statement not covered" >AccordionContent </span>}
+export { <span class="cstat-no" title="statement not covered" >Accordion,</span> <span class="cstat-no" title="statement not covered" >AccordionItem,</span> <span class="cstat-no" title="statement not covered" >AccordionTrigger,</span> <span class="cstat-no" title="statement not covered" >AccordionContent </span>};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -238,7 +235,7 @@ export { <span class="cstat-no" title="statement not covered" >Accordion,</span>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

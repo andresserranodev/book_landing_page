@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -125,13 +125,13 @@
 <a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -183,6 +183,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { useLanguage } from "@/lib/LanguageContext";</span>
 <span class="cstat-no" title="statement not covered" >import { JOURNEY_STATS } from "@/lib/constants";</span>
+<span class="cstat-no" title="statement not covered" >import { Section, SectionHeading } from "@/components/ui/section";</span>
 <span class="cstat-no" title="statement not covered" >import { BookPreviewCarousel } from "./BookPreviewCarousel";</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >export default function <span class="fstat-no" title="function not covered" >A</span>boutBookSection(</span>) {
@@ -190,54 +191,53 @@
   const stats = <span class="cstat-no" title="statement not covered" >JOURNEY_STATS[language];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;section
-      id="about"
-      className="py-16 md:py-24 lg:py-32 bg-background"
-      data-testid="section-about-book"
-    &gt;
-      &lt;div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
-        &lt;div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center"&gt;
-          &lt;div className="order-2 lg:order-1"&gt;
-            &lt;h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-foreground"
-              data-testid="text-about-heading"
-            &gt;
-              {t.aboutBook.heading}
-            &lt;/h2&gt;
-            &lt;div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed"&gt;
-              &lt;p data-testid="text-about-paragraph-1"&gt;{t.aboutBook.paragraph1}&lt;/p&gt;
-              &lt;p data-testid="text-about-paragraph-2"&gt;{t.aboutBook.paragraph2}&lt;/p&gt;
-            &lt;/div&gt;
-&nbsp;
-            &lt;div className="mt-8 grid grid-cols-3 gap-4 text-center"&gt;
-              &lt;div className="p-4" data-testid="stat-miles"&gt;
-                &lt;p className="text-2xl sm:text-3xl font-bold text-foreground"&gt;
-                  {stats.distance}
-                &lt;/p&gt;
-                &lt;p className="text-sm text-muted-foreground"&gt;{t.aboutBook.statMiles}&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div className="p-4" data-testid="stat-countries"&gt;
-                &lt;p className="text-2xl sm:text-3xl font-bold text-foreground"&gt;
-                  {JOURNEY_STATS.countries}
-                &lt;/p&gt;
-                &lt;p className="text-sm text-muted-foreground"&gt;{t.aboutBook.statCountries}&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div className="p-4" data-testid="stat-stories"&gt;
-                &lt;p className="text-2xl sm:text-3xl font-bold text-foreground"&gt;1&lt;/p&gt;
-                &lt;p className="text-sm text-muted-foreground"&gt;{t.aboutBook.statJourney}&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
+    &lt;Section id="about" testId="section-about-book" maxWidth="max-w-6xl"&gt;
+      &lt;div className="grid grid-cols-1 items-center gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16"&gt;
+        &lt;div className="order-2 lg:order-1"&gt;
+          &lt;SectionHeading testId="text-about-heading" marginBottom="mb-6"&gt;
+            {t.aboutBook.heading}
+          &lt;/SectionHeading&gt;
+          &lt;div className="space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg"&gt;
+            &lt;p data-testid="text-about-paragraph-1"&gt;{t.aboutBook.paragraph1}&lt;/p&gt;
+            &lt;p data-testid="text-about-paragraph-2"&gt;{t.aboutBook.paragraph2}&lt;/p&gt;
           &lt;/div&gt;
 &nbsp;
-          &lt;div className="order-1 lg:order-2 flex flex-col items-center justify-center"&gt;
-            &lt;BookPreviewCarousel /&gt;
-            &lt;p className="text-center mt-6 text-sm text-muted-foreground font-medium"&gt;
-              {t.aboutBook.available}
-            &lt;/p&gt;
+          &lt;div className="mt-8 grid grid-cols-3 gap-4 text-center"&gt;
+            &lt;div className="p-4" data-testid="stat-miles"&gt;
+              &lt;p className="text-2xl font-bold text-foreground sm:text-3xl"&gt;
+                {stats.distance}
+              &lt;/p&gt;
+              &lt;p className="text-sm text-muted-foreground"&gt;
+                {t.aboutBook.statMiles}
+              &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div className="p-4" data-testid="stat-countries"&gt;
+              &lt;p className="text-2xl font-bold text-foreground sm:text-3xl"&gt;
+                {JOURNEY_STATS.countries}
+              &lt;/p&gt;
+              &lt;p className="text-sm text-muted-foreground"&gt;
+                {t.aboutBook.statCountries}
+              &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div className="p-4" data-testid="stat-stories"&gt;
+              &lt;p className="text-2xl font-bold text-foreground sm:text-3xl"&gt;
+                1
+              &lt;/p&gt;
+              &lt;p className="text-sm text-muted-foreground"&gt;
+                {t.aboutBook.statJourney}
+              &lt;/p&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
+&nbsp;
+        &lt;div className="order-1 flex flex-col items-center justify-center lg:order-2"&gt;
+          &lt;BookPreviewCarousel /&gt;
+          &lt;p className="mt-6 text-center text-sm font-medium text-muted-foreground"&gt;
+            {t.aboutBook.available}
+          &lt;/p&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/section&gt;
+    &lt;/Section&gt;
   );
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -247,7 +247,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

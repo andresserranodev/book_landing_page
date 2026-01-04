@@ -122,34 +122,8 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,6 +144,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,15 +155,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import bookCover from "@assets/Cover_WIP_1764948752780.jpg";</span>
+<span class="cstat-no" title="statement not covered" >import epubPreview from "@assets/EPUB_IMG-20250203-WA0002.jpg";</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-<span class="cstat-no" title="statement not covered" >import bookCover from "@assets/Cover_WIP_1764948752780.jpg";</span>
-<span class="cstat-no" title="statement not covered" >import epubPreview from "@assets/EPUB_IMG-20250203-WA0002.jpg";</span>
 &nbsp;
 const PREVIEW_IMAGES = <span class="cstat-no" title="statement not covered" >[</span>
   {
@@ -204,9 +204,9 @@ const PREVIEW_IMAGES = <span class="cstat-no" title="statement not covered" >[</
 &nbsp;
 <span class="cstat-no" title="statement not covered" >export function <span class="fstat-no" title="function not covered" >B</span>ookPreviewCarousel(</span>) {
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;div className="relative w-full max-w-xs sm:max-w-sm flex flex-col items-center"&gt;
-      &lt;Carousel 
-        className="w-full" 
+    &lt;div className="relative flex w-full max-w-xs flex-col items-center sm:max-w-sm"&gt;
+      &lt;Carousel
+        className="w-full"
         data-testid="carousel-book-previews"
         opts={{
           align: "start",
@@ -217,11 +217,11 @@ const PREVIEW_IMAGES = <span class="cstat-no" title="statement not covered" >[</
           {PREVIEW_IMAGES.map(<span class="fstat-no" title="function not covered" >(i</span>mage, index) =&gt; (
 <span class="cstat-no" title="statement not covered" >            &lt;CarouselItem key={index}&gt;</span>
               &lt;div className="p-1"&gt;
-                &lt;div className="relative overflow-hidden rounded-lg shadow-2xl bg-muted aspect-[2/3]"&gt;
+                &lt;div className="relative aspect-[2/3] overflow-hidden rounded-lg bg-muted shadow-2xl"&gt;
                   &lt;img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                     data-testid={`img-preview-${index}`}
                   /&gt;
                 &lt;/div&gt;
@@ -229,9 +229,9 @@ const PREVIEW_IMAGES = <span class="cstat-no" title="statement not covered" >[</
             &lt;/CarouselItem&gt;
           ))}
         &lt;/CarouselContent&gt;
-        &lt;div className="flex items-center justify-center gap-4 mt-6"&gt;
-          &lt;CarouselPrevious className="static translate-y-0 h-10 w-10 rounded-full border border-border bg-background/90 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground" /&gt;
-          &lt;CarouselNext className="static translate-y-0 h-10 w-10 rounded-full border border-border bg-background/90 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground" /&gt;
+        &lt;div className="mt-6 flex items-center justify-center gap-4"&gt;
+          &lt;CarouselPrevious className="static h-10 w-10 translate-y-0 rounded-full border border-border bg-background/90 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground" /&gt;
+          &lt;CarouselNext className="static h-10 w-10 translate-y-0 rounded-full border border-border bg-background/90 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground" /&gt;
         &lt;/div&gt;
       &lt;/Carousel&gt;
     &lt;/div&gt;
@@ -244,7 +244,7 @@ const PREVIEW_IMAGES = <span class="cstat-no" title="statement not covered" >[</
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

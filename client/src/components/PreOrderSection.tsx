@@ -4,13 +4,12 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { useWaitlistForm } from "@/hooks/use-waitlist-form";
 import { Section, SectionHeading } from "@/components/ui/section";
 
-const isGitHubPages = import.meta.env.GITHUB_PAGES;
-
 export default function PreOrderSection() {
   const { t } = useLanguage();
   const { email, setEmail, isSubmitting, handleSubmit } = useWaitlistForm();
 
-  if (isGitHubPages) {
+  // Hide the form when deployed to GitHub Pages (static hosting)
+  if (import.meta.env.GITHUB_PAGES) {
     return null;
   }
 

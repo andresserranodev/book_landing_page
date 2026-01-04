@@ -318,13 +318,11 @@
 <a name='L253'></a><a href='#L253'>253</a>
 <a name='L254'></a><a href='#L254'>254</a>
 <a name='L255'></a><a href='#L255'>255</a>
-<a name='L256'></a><a href='#L256'>256</a>
-<a name='L257'></a><a href='#L257'>257</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L256'></a><a href='#L256'>256</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -575,42 +573,41 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client";
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import * as React from "react"</span>
-<span class="cstat-no" title="statement not covered" >import * as MenubarPrimitive from "@radix-ui/react-menubar"</span>
-<span class="cstat-no" title="statement not covered" >import { Check, ChevronRight, Circle } from "lucide-react"</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils"</span>
+<span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import * as MenubarPrimitive from "@radix-ui/react-menubar";</span>
+<span class="cstat-no" title="statement not covered" >import { Check, ChevronRight, Circle } from "lucide-react";</span>
+<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils";</span>
 &nbsp;
 function <span class="fstat-no" title="function not covered" >MenubarMenu(</span>{
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;typeof MenubarPrimitive.Menu&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.Menu {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.Menu {...props} /&gt;;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >MenubarGroup(</span>{
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;typeof MenubarPrimitive.Group&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.Group {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.Group {...props} /&gt;;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >MenubarPortal(</span>{
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;typeof MenubarPrimitive.Portal&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.Portal {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.Portal {...props} /&gt;;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >MenubarRadioGroup(</span>{
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;typeof MenubarPrimitive.RadioGroup&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.RadioGroup {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.RadioGroup {...props} /&gt;;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >MenubarSub(</span>{
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;typeof MenubarPrimitive.Sub&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.Sub data-slot="menubar-sub" {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;MenubarPrimitive.Sub data-slot="menubar-sub" {...props} /&gt;;</span>
 }
 &nbsp;
 const Menubar = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
@@ -625,8 +622,8 @@ const Menubar = <span class="cstat-no" title="statement not covered" >React.forw
     )}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >Menubar.displayName = MenubarPrimitive.Root.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >Menubar.displayName = MenubarPrimitive.Root.displayName;</span>
 &nbsp;
 const MenubarTrigger = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.Trigger&gt;,
@@ -640,13 +637,13 @@ const MenubarTrigger = <span class="cstat-no" title="statement not covered" >Rea
     )}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >MenubarTrigger.displayName = MenubarPrimitive.Trigger.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >MenubarTrigger.displayName = MenubarPrimitive.Trigger.displayName;</span>
 &nbsp;
 const MenubarSubTrigger = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.SubTrigger&gt;,
   React.ComponentPropsWithoutRef&lt;typeof MenubarPrimitive.SubTrigger&gt; &amp; {
-    inset?: boolean
+    inset?: boolean;
   }
 &gt;(<span class="fstat-no" title="function not covered" >({</span> className, inset, children<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }, r</span>ef) =&gt; <span class="cstat-no" title="statement not covered" >(</span>
   &lt;MenubarPrimitive.SubTrigger
@@ -661,8 +658,8 @@ const MenubarSubTrigger = <span class="cstat-no" title="statement not covered" >
     {children}
     &lt;ChevronRight className="ml-auto h-4 w-4" /&gt;
   &lt;/MenubarPrimitive.SubTrigger&gt;
-))
-<span class="cstat-no" title="statement not covered" >MenubarSubTrigger.displayName = MenubarPrimitive.SubTrigger.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >MenubarSubTrigger.displayName = MenubarPrimitive.SubTrigger.displayName;</span>
 &nbsp;
 const MenubarSubContent = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.SubContent&gt;,
@@ -671,13 +668,13 @@ const MenubarSubContent = <span class="cstat-no" title="statement not covered" >
   &lt;MenubarPrimitive.SubContent
     ref={ref}
     className={cn(
-      "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-menubar-content-transform-origin]",
+      "z-50 min-w-[8rem] origin-[--radix-menubar-content-transform-origin] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
       className
     )}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >MenubarSubContent.displayName = MenubarPrimitive.SubContent.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >MenubarSubContent.displayName = MenubarPrimitive.SubContent.displayName;</span>
 &nbsp;
 const MenubarContent = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.Content&gt;,
@@ -694,20 +691,20 @@ const MenubarContent = <span class="cstat-no" title="statement not covered" >Rea
         alignOffset={alignOffset}
         sideOffset={sideOffset}
         className={cn(
-          "z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-menubar-content-transform-origin]",
+          "z-50 min-w-[12rem] origin-[--radix-menubar-content-transform-origin] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
           className
         )}
         {...props}
       /&gt;
     &lt;/MenubarPrimitive.Portal&gt;
   )
-)
-<span class="cstat-no" title="statement not covered" >MenubarContent.displayName = MenubarPrimitive.Content.displayName</span>
+);
+<span class="cstat-no" title="statement not covered" >MenubarContent.displayName = MenubarPrimitive.Content.displayName;</span>
 &nbsp;
 const MenubarItem = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.Item&gt;,
   React.ComponentPropsWithoutRef&lt;typeof MenubarPrimitive.Item&gt; &amp; {
-    inset?: boolean
+    inset?: boolean;
   }
 &gt;(<span class="fstat-no" title="function not covered" >({</span> className, inset<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }, r</span>ef) =&gt; <span class="cstat-no" title="statement not covered" >(</span>
   &lt;MenubarPrimitive.Item
@@ -719,8 +716,8 @@ const MenubarItem = <span class="cstat-no" title="statement not covered" >React.
     )}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >MenubarItem.displayName = MenubarPrimitive.Item.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >MenubarItem.displayName = MenubarPrimitive.Item.displayName;</span>
 &nbsp;
 const MenubarCheckboxItem = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.CheckboxItem&gt;,
@@ -742,8 +739,8 @@ const MenubarCheckboxItem = <span class="cstat-no" title="statement not covered"
     &lt;/span&gt;
     {children}
   &lt;/MenubarPrimitive.CheckboxItem&gt;
-))
-<span class="cstat-no" title="statement not covered" >MenubarCheckboxItem.displayName = MenubarPrimitive.CheckboxItem.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >MenubarCheckboxItem.displayName = MenubarPrimitive.CheckboxItem.displayName;</span>
 &nbsp;
 const MenubarRadioItem = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.RadioItem&gt;,
@@ -764,13 +761,13 @@ const MenubarRadioItem = <span class="cstat-no" title="statement not covered" >R
     &lt;/span&gt;
     {children}
   &lt;/MenubarPrimitive.RadioItem&gt;
-))
-<span class="cstat-no" title="statement not covered" >MenubarRadioItem.displayName = MenubarPrimitive.RadioItem.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >MenubarRadioItem.displayName = MenubarPrimitive.RadioItem.displayName;</span>
 &nbsp;
 const MenubarLabel = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.Label&gt;,
   React.ComponentPropsWithoutRef&lt;typeof MenubarPrimitive.Label&gt; &amp; {
-    inset?: boolean
+    inset?: boolean;
   }
 &gt;(<span class="fstat-no" title="function not covered" >({</span> className, inset<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }, r</span>ef) =&gt; <span class="cstat-no" title="statement not covered" >(</span>
   &lt;MenubarPrimitive.Label
@@ -782,8 +779,8 @@ const MenubarLabel = <span class="cstat-no" title="statement not covered" >React
     )}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >MenubarLabel.displayName = MenubarPrimitive.Label.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >MenubarLabel.displayName = MenubarPrimitive.Label.displayName;</span>
 &nbsp;
 const MenubarSeparator = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof MenubarPrimitive.Separator&gt;,
@@ -794,8 +791,8 @@ const MenubarSeparator = <span class="cstat-no" title="statement not covered" >R
     className={cn("-mx-1 my-1 h-px bg-muted", className)}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >MenubarSeparator.displayName = MenubarPrimitive.Separator.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >MenubarSeparator.displayName = MenubarPrimitive.Separator.displayName;</span>
 &nbsp;
 const MenubarShortcut = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   className<span class="cstat-no" title="statement not covered" >,</span>
@@ -809,9 +806,9 @@ const MenubarShortcut = <span class="cstat-no" title="statement not covered" ><s
       )}
       {...props}
     /&gt;
-  )
-}
-<span class="cstat-no" title="statement not covered" >MenubarShortcut.displayname = "MenubarShortcut"</span>
+  );
+};
+<span class="cstat-no" title="statement not covered" >MenubarShortcut.displayname = "MenubarShortcut";</span>
 &nbsp;
 export {
 <span class="cstat-no" title="statement not covered" >  Menubar,</span>
@@ -830,7 +827,7 @@ export {
 <span class="cstat-no" title="statement not covered" >  MenubarGroup,</span>
 <span class="cstat-no" title="statement not covered" >  MenubarSub,</span>
 <span class="cstat-no" title="statement not covered" >  MenubarShortcut,</span>
-}
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -838,7 +835,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

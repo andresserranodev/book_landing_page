@@ -213,12 +213,10 @@
 <a name='L148'></a><a href='#L148'>148</a>
 <a name='L149'></a><a href='#L149'>149</a>
 <a name='L150'></a><a href='#L150'>150</a>
-<a name='L151'></a><a href='#L151'>151</a>
-<a name='L152'></a><a href='#L152'>152</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L151'></a><a href='#L151'>151</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -365,13 +363,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as React from "react"</span>
-import { type DialogProps } from "@radix-ui/react-dialog"
-<span class="cstat-no" title="statement not covered" >import { Command as CommandPrimitive } from "cmdk"</span>
-<span class="cstat-no" title="statement not covered" >import { Search } from "lucide-react"</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils"</span>
-<span class="cstat-no" title="statement not covered" >import { Dialog, DialogContent } from "@/components/ui/dialog"</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+import { type DialogProps } from "@radix-ui/react-dialog";
+<span class="cstat-no" title="statement not covered" >import { Command as CommandPrimitive } from "cmdk";</span>
+<span class="cstat-no" title="statement not covered" >import { Search } from "lucide-react";</span>
+<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils";</span>
+<span class="cstat-no" title="statement not covered" >import { Dialog, DialogContent } from "@/components/ui/dialog";</span>
 &nbsp;
 const Command = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof CommandPrimitive&gt;,
@@ -385,8 +382,8 @@ const Command = <span class="cstat-no" title="statement not covered" >React.forw
     )}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >Command.displayName = CommandPrimitive.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >Command.displayName = CommandPrimitive.displayName;</span>
 &nbsp;
 const CommandDialog = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> children<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: DialogProps)</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return (</span>
@@ -397,8 +394,8 @@ const CommandDialog = <span class="cstat-no" title="statement not covered" ><spa
         &lt;/Command&gt;
       &lt;/DialogContent&gt;
     &lt;/Dialog&gt;
-  )
-}
+  );
+};
 &nbsp;
 const CommandInput = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof CommandPrimitive.Input&gt;,
@@ -415,9 +412,9 @@ const CommandInput = <span class="cstat-no" title="statement not covered" >React
       {...props}
     /&gt;
   &lt;/div&gt;
-))
+));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >CommandInput.displayName = CommandPrimitive.Input.displayName</span>
+<span class="cstat-no" title="statement not covered" >CommandInput.displayName = CommandPrimitive.Input.displayName;</span>
 &nbsp;
 const CommandList = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof CommandPrimitive.List&gt;,
@@ -428,9 +425,9 @@ const CommandList = <span class="cstat-no" title="statement not covered" >React.
     className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
     {...props}
   /&gt;
-))
+));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >CommandList.displayName = CommandPrimitive.List.displayName</span>
+<span class="cstat-no" title="statement not covered" >CommandList.displayName = CommandPrimitive.List.displayName;</span>
 &nbsp;
 const CommandEmpty = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof CommandPrimitive.Empty&gt;,
@@ -441,9 +438,9 @@ const CommandEmpty = <span class="cstat-no" title="statement not covered" >React
     className="py-6 text-center text-sm"
     {...props}
   /&gt;
-))
+));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >CommandEmpty.displayName = CommandPrimitive.Empty.displayName</span>
+<span class="cstat-no" title="statement not covered" >CommandEmpty.displayName = CommandPrimitive.Empty.displayName;</span>
 &nbsp;
 const CommandGroup = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof CommandPrimitive.Group&gt;,
@@ -457,9 +454,9 @@ const CommandGroup = <span class="cstat-no" title="statement not covered" >React
     )}
     {...props}
   /&gt;
-))
+));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >CommandGroup.displayName = CommandPrimitive.Group.displayName</span>
+<span class="cstat-no" title="statement not covered" >CommandGroup.displayName = CommandPrimitive.Group.displayName;</span>
 &nbsp;
 const CommandSeparator = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof CommandPrimitive.Separator&gt;,
@@ -470,8 +467,8 @@ const CommandSeparator = <span class="cstat-no" title="statement not covered" >R
     className={cn("-mx-1 h-px bg-border", className)}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >CommandSeparator.displayName = CommandPrimitive.Separator.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >CommandSeparator.displayName = CommandPrimitive.Separator.displayName;</span>
 &nbsp;
 const CommandItem = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof CommandPrimitive.Item&gt;,
@@ -480,14 +477,14 @@ const CommandItem = <span class="cstat-no" title="statement not covered" >React.
   &lt;CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected='true']:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0",
+      "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected='true']:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0",
       className
     )}
     {...props}
   /&gt;
-))
+));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >CommandItem.displayName = CommandPrimitive.Item.displayName</span>
+<span class="cstat-no" title="statement not covered" >CommandItem.displayName = CommandPrimitive.Item.displayName;</span>
 &nbsp;
 const CommandShortcut = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   className<span class="cstat-no" title="statement not covered" >,</span>
@@ -501,9 +498,9 @@ const CommandShortcut = <span class="cstat-no" title="statement not covered" ><s
       )}
       {...props}
     /&gt;
-  )
-}
-<span class="cstat-no" title="statement not covered" >CommandShortcut.displayName = "CommandShortcut"</span>
+  );
+};
+<span class="cstat-no" title="statement not covered" >CommandShortcut.displayName = "CommandShortcut";</span>
 &nbsp;
 export {
 <span class="cstat-no" title="statement not covered" >  Command,</span>
@@ -515,7 +512,7 @@ export {
 <span class="cstat-no" title="statement not covered" >  CommandItem,</span>
 <span class="cstat-no" title="statement not covered" >  CommandShortcut,</span>
 <span class="cstat-no" title="statement not covered" >  CommandSeparator,</span>
-}
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -523,7 +520,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

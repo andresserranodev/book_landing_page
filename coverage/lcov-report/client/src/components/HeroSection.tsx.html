@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
@@ -109,18 +109,14 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,6 +145,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,21 +155,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Button } from "@/components/ui/button";</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import heroImage from "@assets/Cotopaxi_1764948376653.jpg";</span>
+<span class="cstat-no" title="statement not covered" >import { Button } from "@/components/ui/button";</span>
 <span class="cstat-no" title="statement not covered" >import { useLanguage } from "@/lib/LanguageContext";</span>
-<span class="cstat-no" title="statement not covered" >import heroImage from "@assets/Cotopaxi_1764948376653.jpg";</span>
+<span class="cstat-no" title="statement not covered" >import { useScrollToSection } from "@/hooks/use-scroll-to-section";</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >export default function <span class="fstat-no" title="function not covered" >H</span>eroSection(</span>) {
   const { t } = <span class="cstat-no" title="statement not covered" >useLanguage();</span>
-&nbsp;
-  const scrollToPreorder = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    document.getElementById("preorder")?.scrollIntoView({ behavior: "smooth" });</span>
-  };
+  const { scrollToSection } = <span class="cstat-no" title="statement not covered" >useScrollToSection();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;section
-      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
+      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden"
       data-testid="section-hero"
     &gt;
       &lt;div
@@ -182,23 +176,23 @@
       /&gt;
       &lt;div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" /&gt;
 &nbsp;
-      &lt;div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto"&gt;
+      &lt;div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8"&gt;
         &lt;h1
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-4 sm:mb-6 tracking-tight"
+          className="mb-4 font-serif text-5xl font-black tracking-tight text-white sm:mb-6 sm:text-6xl md:text-7xl lg:text-8xl"
           data-testid="text-book-title"
         &gt;
           {t.hero.title}
         &lt;/h1&gt;
         &lt;p
-          className="text-lg sm:text-xl md:text-2xl text-white/90 font-medium mb-8 sm:mb-10 max-w-2xl mx-auto"
+          className="mx-auto mb-8 max-w-2xl text-lg font-medium text-white/90 sm:mb-10 sm:text-xl md:text-2xl"
           data-testid="text-book-subtitle"
         &gt;
           {t.hero.subtitle}
         &lt;/p&gt;
         &lt;Button
           size="lg"
-          onClick={scrollToPreorder}
-          className="px-8 py-4 text-lg font-semibold backdrop-blur-md bg-primary/90 border border-primary-border"
+          onClick={<span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >scrollToSection("preorder")}</span>
+          className="border border-primary-border bg-primary/90 px-8 py-4 text-lg font-semibold backdrop-blur-md"
           data-testid="button-hero-preorder"
         &gt;
           {t.hero.preorderButton}
@@ -214,7 +208,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

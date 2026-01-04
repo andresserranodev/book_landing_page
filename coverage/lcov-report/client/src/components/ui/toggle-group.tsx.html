@@ -123,12 +123,10 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -185,21 +183,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client";
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import * as React from "react"</span>
-<span class="cstat-no" title="statement not covered" >import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"</span>
-import { type VariantProps } from "class-variance-authority"
-&nbsp;
-<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils"</span>
-<span class="cstat-no" title="statement not covered" >import { toggleVariants } from "@/components/ui/toggle"</span>
+<span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";</span>
+import { type VariantProps } from "class-variance-authority";
+<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils";</span>
+<span class="cstat-no" title="statement not covered" >import { toggleVariants } from "@/components/ui/toggle";</span>
 &nbsp;
 const ToggleGroupContext = <span class="cstat-no" title="statement not covered" >React.createContext&lt;</span>
   VariantProps&lt;typeof toggleVariants&gt;
 &gt;({
   size: "default",
   variant: "default",
-})
+});
 &nbsp;
 const ToggleGroup = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof ToggleGroupPrimitive.Root&gt;,
@@ -215,16 +212,16 @@ const ToggleGroup = <span class="cstat-no" title="statement not covered" >React.
       {children}
     &lt;/ToggleGroupContext.Provider&gt;
   &lt;/ToggleGroupPrimitive.Root&gt;
-))
+));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName</span>
+<span class="cstat-no" title="statement not covered" >ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;</span>
 &nbsp;
 const ToggleGroupItem = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof ToggleGroupPrimitive.Item&gt;,
   React.ComponentPropsWithoutRef&lt;typeof ToggleGroupPrimitive.Item&gt; &amp;
     VariantProps&lt;typeof toggleVariants&gt;
 &gt;(<span class="fstat-no" title="function not covered" >({</span> className, children, variant, size<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }, r</span>ef) =&gt; {
-  const context = <span class="cstat-no" title="statement not covered" >React.useContext(ToggleGroupContext)</span>
+  const context = <span class="cstat-no" title="statement not covered" >React.useContext(ToggleGroupContext);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;ToggleGroupPrimitive.Item
@@ -240,12 +237,12 @@ const ToggleGroupItem = <span class="cstat-no" title="statement not covered" >Re
     &gt;
       {children}
     &lt;/ToggleGroupPrimitive.Item&gt;
-  )
-})
+  );
+});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName</span>
+<span class="cstat-no" title="statement not covered" >ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName;</span>
 &nbsp;
-export { <span class="cstat-no" title="statement not covered" >ToggleGroup,</span> <span class="cstat-no" title="statement not covered" >ToggleGroupItem </span>}
+export { <span class="cstat-no" title="statement not covered" >ToggleGroup,</span> <span class="cstat-no" title="statement not covered" >ToggleGroupItem </span>};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -253,7 +250,7 @@ export { <span class="cstat-no" title="statement not covered" >ToggleGroup,</spa
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

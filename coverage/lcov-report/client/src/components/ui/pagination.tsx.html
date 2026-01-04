@@ -179,10 +179,8 @@
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
 <a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -297,11 +295,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as React from "react"</span>
-<span class="cstat-no" title="statement not covered" >import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils"</span>
-<span class="cstat-no" title="statement not covered" >import { ButtonProps, buttonVariants } from "@/components/ui/button"</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";</span>
+<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils";</span>
+<span class="cstat-no" title="statement not covered" >import { ButtonProps, buttonVariants } from "@/components/ui/button";</span>
 &nbsp;
 const Pagination = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"nav"&gt;)</span> =&gt; <span class="cstat-no" title="statement not covered" >(</span></span>
   &lt;nav
@@ -310,8 +307,8 @@ const Pagination = <span class="cstat-no" title="statement not covered" ><span c
     className={cn("mx-auto flex w-full justify-center", className)}
     {...props}
   /&gt;
-)
-<span class="cstat-no" title="statement not covered" >Pagination.displayName = "Pagination"</span>
+);
+<span class="cstat-no" title="statement not covered" >Pagination.displayName = "Pagination";</span>
 &nbsp;
 const PaginationContent = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   HTMLUListElement,
@@ -322,21 +319,21 @@ const PaginationContent = <span class="cstat-no" title="statement not covered" >
     className={cn("flex flex-row items-center gap-1", className)}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >PaginationContent.displayName = "PaginationContent"</span>
+));
+<span class="cstat-no" title="statement not covered" >PaginationContent.displayName = "PaginationContent";</span>
 &nbsp;
 const PaginationItem = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   HTMLLIElement,
   React.ComponentProps&lt;"li"&gt;
 &gt;(<span class="fstat-no" title="function not covered" >({</span> className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }, r</span>ef) =&gt; <span class="cstat-no" title="statement not covered" >(</span>
   &lt;li ref={ref} className={cn("", className)} {...props} /&gt;
-))
-<span class="cstat-no" title="statement not covered" >PaginationItem.displayName = "PaginationItem"</span>
+));
+<span class="cstat-no" title="statement not covered" >PaginationItem.displayName = "PaginationItem";</span>
 &nbsp;
 type PaginationLinkProps = {
-  isActive?: boolean
+  isActive?: boolean;
 } &amp; Pick&lt;ButtonProps, "size"&gt; &amp;
-  React.ComponentProps&lt;"a"&gt;
+  React.ComponentProps&lt;"a"&gt;;
 &nbsp;
 const PaginationLink = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   className,
@@ -355,8 +352,8 @@ const PaginationLink = <span class="cstat-no" title="statement not covered" ><sp
     )}
     {...props}
   /&gt;
-)
-<span class="cstat-no" title="statement not covered" >PaginationLink.displayName = "PaginationLink"</span>
+);
+<span class="cstat-no" title="statement not covered" >PaginationLink.displayName = "PaginationLink";</span>
 &nbsp;
 const PaginationPrevious = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   className<span class="cstat-no" title="statement not covered" >,</span>
@@ -371,8 +368,8 @@ const PaginationPrevious = <span class="cstat-no" title="statement not covered" 
     &lt;ChevronLeft className="h-4 w-4" /&gt;
     &lt;span&gt;Previous&lt;/span&gt;
   &lt;/PaginationLink&gt;
-)
-<span class="cstat-no" title="statement not covered" >PaginationPrevious.displayName = "PaginationPrevious"</span>
+);
+<span class="cstat-no" title="statement not covered" >PaginationPrevious.displayName = "PaginationPrevious";</span>
 &nbsp;
 const PaginationNext = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   className<span class="cstat-no" title="statement not covered" >,</span>
@@ -387,8 +384,8 @@ const PaginationNext = <span class="cstat-no" title="statement not covered" ><sp
     &lt;span&gt;Next&lt;/span&gt;
     &lt;ChevronRight className="h-4 w-4" /&gt;
   &lt;/PaginationLink&gt;
-)
-<span class="cstat-no" title="statement not covered" >PaginationNext.displayName = "PaginationNext"</span>
+);
+<span class="cstat-no" title="statement not covered" >PaginationNext.displayName = "PaginationNext";</span>
 &nbsp;
 const PaginationEllipsis = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   className<span class="cstat-no" title="statement not covered" >,</span>
@@ -402,8 +399,8 @@ const PaginationEllipsis = <span class="cstat-no" title="statement not covered" 
     &lt;MoreHorizontal className="h-4 w-4" /&gt;
     &lt;span className="sr-only"&gt;More pages&lt;/span&gt;
   &lt;/span&gt;
-)
-<span class="cstat-no" title="statement not covered" >PaginationEllipsis.displayName = "PaginationEllipsis"</span>
+);
+<span class="cstat-no" title="statement not covered" >PaginationEllipsis.displayName = "PaginationEllipsis";</span>
 &nbsp;
 export {
 <span class="cstat-no" title="statement not covered" >  Pagination,</span>
@@ -413,7 +410,7 @@ export {
 <span class="cstat-no" title="statement not covered" >  PaginationLink,</span>
 <span class="cstat-no" title="statement not covered" >  PaginationNext,</span>
 <span class="cstat-no" title="statement not covered" >  PaginationPrevious,</span>
-}
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -421,7 +418,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

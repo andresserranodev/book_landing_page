@@ -789,14 +789,12 @@
 <a name='L724'></a><a href='#L724'>724</a>
 <a name='L725'></a><a href='#L725'>725</a>
 <a name='L726'></a><a href='#L726'>726</a>
-<a name='L727'></a><a href='#L727'>727</a>
-<a name='L728'></a><a href='#L728'>728</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L727'></a><a href='#L727'>727</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1517,59 +1515,58 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client";
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import * as React from "react"</span>
-<span class="cstat-no" title="statement not covered" >import { Slot } from "@radix-ui/react-slot"</span>
-<span class="cstat-no" title="statement not covered" >import { cva, VariantProps } from "class-variance-authority"</span>
-<span class="cstat-no" title="statement not covered" >import { PanelLeftIcon } from "lucide-react"</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >import { useIsMobile } from "@/hooks/use-mobile"</span>
-<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils"</span>
-<span class="cstat-no" title="statement not covered" >import { Button } from "@/components/ui/button"</span>
-<span class="cstat-no" title="statement not covered" >import { Input } from "@/components/ui/input"</span>
-<span class="cstat-no" title="statement not covered" >import { Separator } from "@/components/ui/separator"</span>
+<span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import { Slot } from "@radix-ui/react-slot";</span>
+<span class="cstat-no" title="statement not covered" >import { cva, VariantProps } from "class-variance-authority";</span>
+<span class="cstat-no" title="statement not covered" >import { PanelLeftIcon } from "lucide-react";</span>
+<span class="cstat-no" title="statement not covered" >import { useIsMobile } from "@/hooks/use-mobile";</span>
+<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils";</span>
+<span class="cstat-no" title="statement not covered" >import { Button } from "@/components/ui/button";</span>
+<span class="cstat-no" title="statement not covered" >import { Input } from "@/components/ui/input";</span>
+<span class="cstat-no" title="statement not covered" >import { Separator } from "@/components/ui/separator";</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet"
-<span class="cstat-no" title="statement not covered" >import { Skeleton } from "@/components/ui/skeleton"</span>
+} from "@/components/ui/sheet";
+<span class="cstat-no" title="statement not covered" >import { Skeleton } from "@/components/ui/skeleton";</span>
 <span class="cstat-no" title="statement not covered" >import {</span>
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 &nbsp;
-const SIDEBAR_COOKIE_NAME = <span class="cstat-no" title="statement not covered" >"sidebar_state"</span>
-const SIDEBAR_COOKIE_MAX_AGE = <span class="cstat-no" title="statement not covered" >60 * 60 * 24 * 7</span>
-const SIDEBAR_WIDTH = <span class="cstat-no" title="statement not covered" >"16rem"</span>
-const SIDEBAR_WIDTH_MOBILE = <span class="cstat-no" title="statement not covered" >"18rem"</span>
-const SIDEBAR_WIDTH_ICON = <span class="cstat-no" title="statement not covered" >"3rem"</span>
-const SIDEBAR_KEYBOARD_SHORTCUT = <span class="cstat-no" title="statement not covered" >"b"</span>
+const SIDEBAR_COOKIE_NAME = <span class="cstat-no" title="statement not covered" >"sidebar_state";</span>
+const SIDEBAR_COOKIE_MAX_AGE = <span class="cstat-no" title="statement not covered" >60 * 60 * 24 * 7;</span>
+const SIDEBAR_WIDTH = <span class="cstat-no" title="statement not covered" >"16rem";</span>
+const SIDEBAR_WIDTH_MOBILE = <span class="cstat-no" title="statement not covered" >"18rem";</span>
+const SIDEBAR_WIDTH_ICON = <span class="cstat-no" title="statement not covered" >"3rem";</span>
+const SIDEBAR_KEYBOARD_SHORTCUT = <span class="cstat-no" title="statement not covered" >"b";</span>
 &nbsp;
 type SidebarContextProps = {
-  state: "expanded" | "collapsed"
-  open: boolean
-  setOpen: (open: boolean) =&gt; void
-  openMobile: boolean
-  setOpenMobile: (open: boolean) =&gt; void
-  isMobile: boolean
-  toggleSidebar: () =&gt; void
-}
+  state: "expanded" | "collapsed";
+  open: boolean;
+  setOpen: (open: boolean) =&gt; void;
+  openMobile: boolean;
+  setOpenMobile: (open: boolean) =&gt; void;
+  isMobile: boolean;
+  toggleSidebar: () =&gt; void;
+};
 &nbsp;
-const SidebarContext = <span class="cstat-no" title="statement not covered" >React.createContext&lt;SidebarContextProps | null&gt;(null)</span>
+const SidebarContext = <span class="cstat-no" title="statement not covered" >React.createContext&lt;SidebarContextProps | null&gt;(null);</span>
 &nbsp;
 function <span class="fstat-no" title="function not covered" >useSidebar(</span>) {
-  const context = <span class="cstat-no" title="statement not covered" >React.useContext(SidebarContext)</span>
+  const context = <span class="cstat-no" title="statement not covered" >React.useContext(SidebarContext);</span>
 <span class="cstat-no" title="statement not covered" >  if (!context) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error("useSidebar must be used within a SidebarProvider.")</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error("useSidebar must be used within a SidebarProvider.");</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return context</span>
+<span class="cstat-no" title="statement not covered" >  return context;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarProvider(</span>{
@@ -1581,36 +1578,36 @@ function <span class="fstat-no" title="function not covered" >SidebarProvider(</
   children<span class="cstat-no" title="statement not covered" >,</span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;"div"&gt; &amp; {
-  defaultOpen?: boolean
-  open?: boolean
-  onOpenChange?: (open: boolean) =&gt; void
+  defaultOpen?: boolean;
+  open?: boolean;
+  onOpenChange?: (open: boolean) =&gt; void;
 }) {
-  const isMobile = <span class="cstat-no" title="statement not covered" >useIsMobile()</span>
-  const [openMobile, setOpenMobile] = <span class="cstat-no" title="statement not covered" >React.useState(false)</span>
+  const isMobile = <span class="cstat-no" title="statement not covered" >useIsMobile();</span>
+  const [openMobile, setOpenMobile] = <span class="cstat-no" title="statement not covered" >React.useState(false);</span>
 &nbsp;
   // This is the internal state of the sidebar.
   // We use openProp and setOpenProp for control from outside the component.
-  const [_open, _setOpen] = <span class="cstat-no" title="statement not covered" >React.useState(defaultOpen)</span>
-  const open = <span class="cstat-no" title="statement not covered" >openProp ?? _open</span>
+  const [_open, _setOpen] = <span class="cstat-no" title="statement not covered" >React.useState(defaultOpen);</span>
+  const open = <span class="cstat-no" title="statement not covered" >openProp ?? _open;</span>
   const setOpen = <span class="cstat-no" title="statement not covered" >React.useCallback(</span>
 <span class="fstat-no" title="function not covered" >    (v</span>alue: boolean | ((value: boolean) =&gt; boolean)) =&gt; {
-      const openState = <span class="cstat-no" title="statement not covered" >typeof value === "function" ? value(open) : value</span>
+      const openState = <span class="cstat-no" title="statement not covered" >typeof value === "function" ? value(open) : value;</span>
 <span class="cstat-no" title="statement not covered" >      if (setOpenProp) {</span>
-<span class="cstat-no" title="statement not covered" >        setOpenProp(openState)</span>
+<span class="cstat-no" title="statement not covered" >        setOpenProp(openState);</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        _setOpen(openState)</span>
+<span class="cstat-no" title="statement not covered" >        _setOpen(openState);</span>
       }
 &nbsp;
       // This sets the cookie to keep the sidebar state.
-<span class="cstat-no" title="statement not covered" >      document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`</span>
+<span class="cstat-no" title="statement not covered" >      document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;</span>
     },
     [setOpenProp, open]
-  )
+  );
 &nbsp;
   // Helper to toggle the sidebar.
   const toggleSidebar = <span class="cstat-no" title="statement not covered" >React.useCallback(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return isMobile ? setOpenMobile(<span class="fstat-no" title="function not covered" >(o</span>pen) =&gt; <span class="cstat-no" title="statement not covered" >!open)</span> : setOpen(<span class="fstat-no" title="function not covered" >(o</span>pen) =&gt; <span class="cstat-no" title="statement not covered" >!open)</span></span>
-  }, [isMobile, setOpen, setOpenMobile])
+<span class="cstat-no" title="statement not covered" >    return isMobile ? setOpenMobile(<span class="fstat-no" title="function not covered" >(o</span>pen) =&gt; <span class="cstat-no" title="statement not covered" >!open)</span> : setOpen(<span class="fstat-no" title="function not covered" >(o</span>pen) =&gt; <span class="cstat-no" title="statement not covered" >!open)</span>;</span>
+  }, [isMobile, setOpen, setOpenMobile]);
 &nbsp;
   // Adds a keyboard shortcut to toggle the sidebar.
 <span class="cstat-no" title="statement not covered" >  React.useEffect(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
@@ -1619,18 +1616,18 @@ function <span class="fstat-no" title="function not covered" >SidebarProvider(</
         event.key === SIDEBAR_KEYBOARD_SHORTCUT &amp;&amp;
         (event.metaKey || event.ctrlKey)
       ) {
-<span class="cstat-no" title="statement not covered" >        event.preventDefault()</span>
-<span class="cstat-no" title="statement not covered" >        toggleSidebar()</span>
+<span class="cstat-no" title="statement not covered" >        event.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >        toggleSidebar();</span>
       }
-    }
+    };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    window.addEventListener("keydown", handleKeyDown)</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >window.removeEventListener("keydown", handleKeyDown)</span></span>
-  }, [toggleSidebar])
+<span class="cstat-no" title="statement not covered" >    window.addEventListener("keydown", handleKeyDown);</span>
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >window.removeEventListener("keydown", handleKeyDown);</span></span>
+  }, [toggleSidebar]);
 &nbsp;
   // We add a state so that we can do data-state="expanded" or "collapsed".
   // This makes it easier to style the sidebar with Tailwind classes.
-  const state = <span class="cstat-no" title="statement not covered" >open ? "expanded" : "collapsed"</span>
+  const state = <span class="cstat-no" title="statement not covered" >open ? "expanded" : "collapsed";</span>
 &nbsp;
   const contextValue = <span class="cstat-no" title="statement not covered" >React.useMemo&lt;SidebarContextProps&gt;(</span>
 <span class="fstat-no" title="function not covered" >    () =</span>&gt; (<span class="cstat-no" title="statement not covered" >{</span>
@@ -1643,7 +1640,7 @@ function <span class="fstat-no" title="function not covered" >SidebarProvider(</
       toggleSidebar,
     }),
     [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar]
-  )
+  );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;SidebarContext.Provider value={contextValue}&gt;
@@ -1667,7 +1664,7 @@ function <span class="fstat-no" title="function not covered" >SidebarProvider(</
         &lt;/div&gt;
       &lt;/TooltipProvider&gt;
     &lt;/SidebarContext.Provider&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >Sidebar(</span>{
@@ -1678,25 +1675,25 @@ function <span class="fstat-no" title="function not covered" >Sidebar(</span>{
   children<span class="cstat-no" title="statement not covered" >,</span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;"div"&gt; &amp; {
-  side?: "left" | "right"
-  variant?: "sidebar" | "floating" | "inset"
-  collapsible?: "offcanvas" | "icon" | "none"
+  side?: "left" | "right";
+  variant?: "sidebar" | "floating" | "inset";
+  collapsible?: "offcanvas" | "icon" | "none";
 }) {
-  const { isMobile, state, openMobile, setOpenMobile } = <span class="cstat-no" title="statement not covered" >useSidebar()</span>
+  const { isMobile, state, openMobile, setOpenMobile } = <span class="cstat-no" title="statement not covered" >useSidebar();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (collapsible === "none") {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
       &lt;div
         data-slot="sidebar"
         className={cn(
-          "bg-sidebar text-sidebar-foreground flex h-full w-[var(--sidebar-width)] flex-col",
+          "flex h-full w-[var(--sidebar-width)] flex-col bg-sidebar text-sidebar-foreground",
           className
         )}
         {...props}
       &gt;
         {children}
       &lt;/div&gt;
-    )
+    );
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (isMobile) {</span>
@@ -1706,7 +1703,7 @@ function <span class="fstat-no" title="function not covered" >Sidebar(</span>{
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="bg-sidebar text-sidebar-foreground w-[var(--sidebar-width)] p-0 [&amp;&gt;button]:hidden"
+          className="w-[var(--sidebar-width)] bg-sidebar p-0 text-sidebar-foreground [&amp;&gt;button]:hidden"
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
@@ -1721,12 +1718,12 @@ function <span class="fstat-no" title="function not covered" >Sidebar(</span>{
           &lt;div className="flex h-full w-full flex-col"&gt;{children}&lt;/div&gt;
         &lt;/SheetContent&gt;
       &lt;/Sheet&gt;
-    )
+    );
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div
-      className="group peer text-sidebar-foreground hidden md:block"
+      className="group peer hidden text-sidebar-foreground md:block"
       data-state={state}
       data-collapsible={state === "collapsed" ? collapsible : ""}
       data-variant={variant}
@@ -1763,13 +1760,13 @@ function <span class="fstat-no" title="function not covered" >Sidebar(</span>{
         &lt;div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
+          className="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow-sm"
         &gt;
           {children}
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarTrigger(</span>{
@@ -1777,7 +1774,7 @@ function <span class="fstat-no" title="function not covered" >SidebarTrigger(</s
   onClick<span class="cstat-no" title="statement not covered" >,</span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;typeof Button&gt;) {
-  const { toggleSidebar } = <span class="cstat-no" title="statement not covered" >useSidebar()</span>
+  const { toggleSidebar } = <span class="cstat-no" title="statement not covered" >useSidebar();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;Button
@@ -1787,19 +1784,19 @@ function <span class="fstat-no" title="function not covered" >SidebarTrigger(</s
       size="icon"
       className={cn("h-7 w-7", className)}
       onClick={<span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {
-<span class="cstat-no" title="statement not covered" >        onClick?.(event)</span>
-<span class="cstat-no" title="statement not covered" >        toggleSidebar()</span>
+<span class="cstat-no" title="statement not covered" >        onClick?.(event);</span>
+<span class="cstat-no" title="statement not covered" >        toggleSidebar();</span>
       }}
       {...props}
     &gt;
       &lt;PanelLeftIcon /&gt;
       &lt;span className="sr-only"&gt;Toggle Sidebar&lt;/span&gt;
     &lt;/Button&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarRail(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"button"&gt;)</span> {
-  const { toggleSidebar } = <span class="cstat-no" title="statement not covered" >useSidebar()</span>
+  const { toggleSidebar } = <span class="cstat-no" title="statement not covered" >useSidebar();</span>
 &nbsp;
   // Note: Tailwind v3.4 doesn't support "in-" selectors. So the rail won't work perfectly.
 <span class="cstat-no" title="statement not covered" >  return (</span>
@@ -1811,17 +1808,17 @@ function <span class="fstat-no" title="function not covered" >SidebarRail(</span
       onClick={toggleSidebar}
       title="Toggle Sidebar"
       className={cn(
-        "hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] sm:flex",
+        "absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] hover:after:bg-sidebar-border group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex",
         "in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize",
         "[[data-side=left][data-state=collapsed]_&amp;]:cursor-e-resize [[data-side=right][data-state=collapsed]_&amp;]:cursor-w-resize",
-        "hover:group-data-[collapsible=offcanvas]:bg-sidebar group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full",
+        "group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full hover:group-data-[collapsible=offcanvas]:bg-sidebar",
         "[[data-side=left][data-collapsible=offcanvas]_&amp;]:-right-2",
         "[[data-side=right][data-collapsible=offcanvas]_&amp;]:-left-2",
         className
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarInset(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"main"&gt;)</span> {
@@ -1829,13 +1826,13 @@ function <span class="fstat-no" title="function not covered" >SidebarInset(</spa
     &lt;main
       data-slot="sidebar-inset"
       className={cn(
-        "bg-background relative flex w-full flex-1 flex-col",
-        "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
+        "relative flex w-full flex-1 flex-col bg-background",
+        "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm",
         className
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarInput(</span>{
@@ -1846,10 +1843,10 @@ function <span class="fstat-no" title="function not covered" >SidebarInput(</spa
     &lt;Input
       data-slot="sidebar-input"
       data-sidebar="input"
-      className={cn("bg-background h-8 w-full shadow-none", className)}
+      className={cn("h-8 w-full bg-background shadow-none", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarHeader(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"div"&gt;)</span> {
@@ -1860,7 +1857,7 @@ function <span class="fstat-no" title="function not covered" >SidebarHeader(</sp
       className={cn("flex flex-col gap-2 p-2", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarFooter(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"div"&gt;)</span> {
@@ -1871,7 +1868,7 @@ function <span class="fstat-no" title="function not covered" >SidebarFooter(</sp
       className={cn("flex flex-col gap-2 p-2", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarSeparator(</span>{
@@ -1882,10 +1879,10 @@ function <span class="fstat-no" title="function not covered" >SidebarSeparator(<
     &lt;Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn("bg-sidebar-border mx-2 w-auto", className)}
+      className={cn("mx-2 w-auto bg-sidebar-border", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarContent(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"div"&gt;)</span> {
@@ -1899,7 +1896,7 @@ function <span class="fstat-no" title="function not covered" >SidebarContent(</s
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarGroup(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"div"&gt;)</span> {
@@ -1910,7 +1907,7 @@ function <span class="fstat-no" title="function not covered" >SidebarGroup(</spa
       className={cn("relative flex w-full min-w-0 flex-col p-2", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarGroupLabel(</span>{
@@ -1918,20 +1915,20 @@ function <span class="fstat-no" title="function not covered" >SidebarGroupLabel(
   asChild = <span class="branch-0 cbranch-no" title="branch not covered" >false<span class="cstat-no" title="statement not covered" >,</span></span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;"div"&gt; &amp; { asChild?: boolean }) {
-  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "div"</span>
+  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "div";</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;Comp
       data-slot="sidebar-group-label"
       data-sidebar="group-label"
       className={cn(
-        "text-sidebar-foreground/70 ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&amp;&gt;svg]:h-4 [&amp;&gt;svg]:w-4 [&amp;&gt;svg]:shrink-0",
+        "outline-hidden flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 ring-sidebar-ring transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&amp;&gt;svg]:h-4 [&amp;&gt;svg]:w-4 [&amp;&gt;svg]:shrink-0",
         "group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
         className
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarGroupAction(</span>{
@@ -1939,14 +1936,14 @@ function <span class="fstat-no" title="function not covered" >SidebarGroupAction
   asChild = <span class="branch-0 cbranch-no" title="branch not covered" >false<span class="cstat-no" title="statement not covered" >,</span></span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;"button"&gt; &amp; { asChild?: boolean }) {
-  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "button"</span>
+  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "button";</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;Comp
       data-slot="sidebar-group-action"
       data-sidebar="group-action"
       className={cn(
-        "text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-hidden transition-transform focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0",
+        "outline-hidden absolute right-3 top-3.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0",
         // Increases the hit area of the button on mobile.
         "after:absolute after:-inset-2 md:after:hidden",
         "group-data-[collapsible=icon]:hidden",
@@ -1954,7 +1951,7 @@ function <span class="fstat-no" title="function not covered" >SidebarGroupAction
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarGroupContent(</span>{
@@ -1968,7 +1965,7 @@ function <span class="fstat-no" title="function not covered" >SidebarGroupConten
       className={cn("w-full text-sm", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenu(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"ul"&gt;)</span> {
@@ -1979,7 +1976,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenu(</span
       className={cn("flex w-full min-w-0 flex-col gap-1", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenuItem(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"li"&gt;)</span> {
@@ -1990,7 +1987,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuItem(</
       className={cn("group/menu-item relative", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 const sidebarMenuButtonVariants = <span class="cstat-no" title="statement not covered" >cva(</span>
@@ -2013,7 +2010,7 @@ const sidebarMenuButtonVariants = <span class="cstat-no" title="statement not co
       size: "default",
     },
   }
-)
+);
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenuButton(</span>{
   asChild = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
@@ -2024,12 +2021,12 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuButton(
   className<span class="cstat-no" title="statement not covered" >,</span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;"button"&gt; &amp; {
-  asChild?: boolean
-  isActive?: boolean
-  tooltip?: string | React.ComponentProps&lt;typeof TooltipContent&gt;
+  asChild?: boolean;
+  isActive?: boolean;
+  tooltip?: string | React.ComponentProps&lt;typeof TooltipContent&gt;;
 } &amp; VariantProps&lt;typeof sidebarMenuButtonVariants&gt;) {
-  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "button"</span>
-  const { isMobile, state } = <span class="cstat-no" title="statement not covered" >useSidebar()</span>
+  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "button";</span>
+  const { isMobile, state } = <span class="cstat-no" title="statement not covered" >useSidebar();</span>
 &nbsp;
   const button = (
 <span class="cstat-no" title="statement not covered" >    &lt;Comp</span>
@@ -2040,16 +2037,16 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuButton(
       className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
       {...props}
     /&gt;
-  )
+  );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!tooltip) {</span>
-<span class="cstat-no" title="statement not covered" >    return button</span>
+<span class="cstat-no" title="statement not covered" >    return button;</span>
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (typeof tooltip === "string") {</span>
 <span class="cstat-no" title="statement not covered" >    tooltip = {</span>
       children: tooltip,
-    }
+    };
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
@@ -2062,7 +2059,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuButton(
         {...tooltip}
       /&gt;
     &lt;/Tooltip&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenuAction(</span>{
@@ -2071,17 +2068,17 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuAction(
   showOnHover = <span class="branch-0 cbranch-no" title="branch not covered" >false<span class="cstat-no" title="statement not covered" >,</span></span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;"button"&gt; &amp; {
-  asChild?: boolean
-  showOnHover?: boolean
+  asChild?: boolean;
+  showOnHover?: boolean;
 }) {
-  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "button"</span>
+  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "button";</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;Comp
       data-slot="sidebar-menu-action"
       data-sidebar="menu-action"
       className={cn(
-        "text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer-hover/menu-button:text-sidebar-accent-foreground absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-hidden transition-transform focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0",
+        "outline-hidden absolute right-1 top-1.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 peer-hover/menu-button:text-sidebar-accent-foreground [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0",
         // Increases the hit area of the button on mobile.
         "after:absolute after:-inset-2 md:after:hidden",
         "peer-data-[size=sm]/menu-button:top-1",
@@ -2089,12 +2086,12 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuAction(
         "peer-data-[size=lg]/menu-button:top-2.5",
         "group-data-[collapsible=icon]:hidden",
         showOnHover &amp;&amp;
-          "peer-data-[active=true]/menu-button:text-sidebar-accent-foreground group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 md:opacity-0",
+          "group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 peer-data-[active=true]/menu-button:text-sidebar-accent-foreground md:opacity-0",
         className
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenuBadge(</span>{
@@ -2106,7 +2103,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuBadge(<
       data-slot="sidebar-menu-badge"
       data-sidebar="menu-badge"
       className={cn(
-        "text-sidebar-foreground pointer-events-none absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium tabular-nums select-none",
+        "pointer-events-none absolute right-1 flex h-5 min-w-5 select-none items-center justify-center rounded-md px-1 text-xs font-medium tabular-nums text-sidebar-foreground",
         "peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[active=true]/menu-button:text-sidebar-accent-foreground",
         "peer-data-[size=sm]/menu-button:top-1",
         "peer-data-[size=default]/menu-button:top-1.5",
@@ -2116,7 +2113,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuBadge(<
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenuSkeleton(</span>{
@@ -2124,12 +2121,12 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuSkeleto
   showIcon = <span class="branch-0 cbranch-no" title="branch not covered" >false<span class="cstat-no" title="statement not covered" >,</span></span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;"div"&gt; &amp; {
-  showIcon?: boolean
+  showIcon?: boolean;
 }) {
   // Random width between 50 to 90%.
   const width = <span class="cstat-no" title="statement not covered" >React.useMemo(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return `${Math.floor(Math.random() * 40) + 50}%`</span>
-  }, [])
+<span class="cstat-no" title="statement not covered" >    return `${Math.floor(Math.random() * 40) + 50}%`;</span>
+  }, []);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div
@@ -2154,7 +2151,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuSkeleto
         }
       /&gt;
     &lt;/div&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenuSub(</span>{ className<span class="cstat-no" title="statement not covered" >, ...p</span>rops<span class="cstat-no" title="statement not covered" > }: React.ComponentProps&lt;"ul"&gt;)</span> {
@@ -2163,13 +2160,13 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuSub(</s
       data-slot="sidebar-menu-sub"
       data-sidebar="menu-sub"
       className={cn(
-        "border-sidebar-border mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l px-2.5 py-0.5",
+        "mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5",
         "group-data-[collapsible=icon]:hidden",
         className
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenuSubItem(</span>{
@@ -2183,7 +2180,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuSubItem
       className={cn("group/menu-sub-item relative", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >SidebarMenuSubButton(</span>{
@@ -2193,11 +2190,11 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuSubButt
   className<span class="cstat-no" title="statement not covered" >,</span>
   ...props<span class="cstat-no" title="statement not covered" ></span>
 }: React.ComponentProps&lt;"a"&gt; &amp; {
-  asChild?: boolean
-  size?: "sm" | "md"
-  isActive?: boolean
+  asChild?: boolean;
+  size?: "sm" | "md";
+  isActive?: boolean;
 }) {
-  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "a"</span>
+  const Comp = <span class="cstat-no" title="statement not covered" >asChild ? Slot : "a";</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;Comp
@@ -2206,7 +2203,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuSubButt
       data-size={size}
       data-active={isActive}
       className={cn(
-        "text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground active:bg-sidebar-accent active:text-sidebar-accent-foreground [&amp;&gt;svg]:text-sidebar-accent-foreground flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 outline outline-2 outline-transparent outline-offset-2 focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0",
+        "flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 text-sidebar-foreground outline outline-2 outline-offset-2 outline-transparent ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 [&amp;&gt;svg]:text-sidebar-accent-foreground",
         "data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground",
         size === "sm" &amp;&amp; "text-xs",
         size === "md" &amp;&amp; "text-sm",
@@ -2215,7 +2212,7 @@ function <span class="fstat-no" title="function not covered" >SidebarMenuSubButt
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 export {
@@ -2243,7 +2240,7 @@ export {
 <span class="cstat-no" title="statement not covered" >  SidebarSeparator,</span>
 <span class="cstat-no" title="statement not covered" >  SidebarTrigger,</span>
 <span class="cstat-no" title="statement not covered" >  useSidebar,</span>
-}
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -2251,7 +2248,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

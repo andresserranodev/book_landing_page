@@ -180,12 +180,10 @@
 <a name='L115'></a><a href='#L115'>115</a>
 <a name='L116'></a><a href='#L116'>116</a>
 <a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a>
-<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -299,12 +297,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client";
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import * as React from "react"</span>
-<span class="cstat-no" title="statement not covered" >import { Drawer as DrawerPrimitive } from "vaul"</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils"</span>
+<span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import { Drawer as DrawerPrimitive } from "vaul";</span>
+<span class="cstat-no" title="statement not covered" >import { cn } from "@/lib/utils";</span>
 &nbsp;
 const Drawer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   shouldScaleBackground = <span class="branch-0 cbranch-no" title="branch not covered" >true<span class="cstat-no" title="statement not covered" >,</span></span>
@@ -314,14 +311,14 @@ const Drawer = <span class="cstat-no" title="statement not covered" ><span class
     shouldScaleBackground={shouldScaleBackground}
     {...props}
   /&gt;
-)
-<span class="cstat-no" title="statement not covered" >Drawer.displayName = "Drawer"</span>
+);
+<span class="cstat-no" title="statement not covered" >Drawer.displayName = "Drawer";</span>
 &nbsp;
-const DrawerTrigger = <span class="cstat-no" title="statement not covered" >DrawerPrimitive.Trigger</span>
+const DrawerTrigger = <span class="cstat-no" title="statement not covered" >DrawerPrimitive.Trigger;</span>
 &nbsp;
-const DrawerPortal = <span class="cstat-no" title="statement not covered" >DrawerPrimitive.Portal</span>
+const DrawerPortal = <span class="cstat-no" title="statement not covered" >DrawerPrimitive.Portal;</span>
 &nbsp;
-const DrawerClose = <span class="cstat-no" title="statement not covered" >DrawerPrimitive.Close</span>
+const DrawerClose = <span class="cstat-no" title="statement not covered" >DrawerPrimitive.Close;</span>
 &nbsp;
 const DrawerOverlay = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof DrawerPrimitive.Overlay&gt;,
@@ -332,8 +329,8 @@ const DrawerOverlay = <span class="cstat-no" title="statement not covered" >Reac
     className={cn("fixed inset-0 z-50 bg-black/80", className)}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;</span>
 &nbsp;
 const DrawerContent = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof DrawerPrimitive.Content&gt;,
@@ -353,8 +350,8 @@ const DrawerContent = <span class="cstat-no" title="statement not covered" >Reac
       {children}
     &lt;/DrawerPrimitive.Content&gt;
   &lt;/DrawerPortal&gt;
-))
-<span class="cstat-no" title="statement not covered" >DrawerContent.displayName = "DrawerContent"</span>
+));
+<span class="cstat-no" title="statement not covered" >DrawerContent.displayName = "DrawerContent";</span>
 &nbsp;
 const DrawerHeader = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   className<span class="cstat-no" title="statement not covered" >,</span>
@@ -364,8 +361,8 @@ const DrawerHeader = <span class="cstat-no" title="statement not covered" ><span
     className={cn("grid gap-1.5 p-4 text-center sm:text-left", className)}
     {...props}
   /&gt;
-)
-<span class="cstat-no" title="statement not covered" >DrawerHeader.displayName = "DrawerHeader"</span>
+);
+<span class="cstat-no" title="statement not covered" >DrawerHeader.displayName = "DrawerHeader";</span>
 &nbsp;
 const DrawerFooter = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   className<span class="cstat-no" title="statement not covered" >,</span>
@@ -375,8 +372,8 @@ const DrawerFooter = <span class="cstat-no" title="statement not covered" ><span
     className={cn("mt-auto flex flex-col gap-2 p-4", className)}
     {...props}
   /&gt;
-)
-<span class="cstat-no" title="statement not covered" >DrawerFooter.displayName = "DrawerFooter"</span>
+);
+<span class="cstat-no" title="statement not covered" >DrawerFooter.displayName = "DrawerFooter";</span>
 &nbsp;
 const DrawerTitle = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof DrawerPrimitive.Title&gt;,
@@ -390,8 +387,8 @@ const DrawerTitle = <span class="cstat-no" title="statement not covered" >React.
     )}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >DrawerTitle.displayName = DrawerPrimitive.Title.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >DrawerTitle.displayName = DrawerPrimitive.Title.displayName;</span>
 &nbsp;
 const DrawerDescription = <span class="cstat-no" title="statement not covered" >React.forwardRef&lt;</span>
   React.ElementRef&lt;typeof DrawerPrimitive.Description&gt;,
@@ -402,8 +399,8 @@ const DrawerDescription = <span class="cstat-no" title="statement not covered" >
     className={cn("text-sm text-muted-foreground", className)}
     {...props}
   /&gt;
-))
-<span class="cstat-no" title="statement not covered" >DrawerDescription.displayName = DrawerPrimitive.Description.displayName</span>
+));
+<span class="cstat-no" title="statement not covered" >DrawerDescription.displayName = DrawerPrimitive.Description.displayName;</span>
 &nbsp;
 export {
 <span class="cstat-no" title="statement not covered" >  Drawer,</span>
@@ -416,7 +413,7 @@ export {
 <span class="cstat-no" title="statement not covered" >  DrawerFooter,</span>
 <span class="cstat-no" title="statement not covered" >  DrawerTitle,</span>
 <span class="cstat-no" title="statement not covered" >  DrawerDescription,</span>
-}
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -424,7 +421,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-04T04:43:32.623Z
+                at 2026-01-04T17:52:36.706Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
