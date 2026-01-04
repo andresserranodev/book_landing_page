@@ -36,6 +36,13 @@ jobs:
       - name: Build for GitHub Pages
         run: npm run build:gh-pages
 
+      - name: Verify build output
+        run: |
+          echo "Contents of dist/public:"
+          ls -la dist/public/
+          echo "index.html exists:"
+          test -f dist/public/index.html && echo "YES" || echo "NO"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
