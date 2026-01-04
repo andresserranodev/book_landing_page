@@ -8,11 +8,6 @@ const GOOGLE_FORM_URL =
 export default function PreOrderSection() {
   const { t } = useLanguage();
 
-  // Hide the form when deployed to GitHub Pages (static hosting)
-  if (import.meta.env.GITHUB_PAGES) {
-    return null;
-  }
-
   return (
     <Section
       id="preorder"
