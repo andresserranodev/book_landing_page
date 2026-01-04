@@ -23,7 +23,6 @@ export interface Translations {
   aboutAuthor: {
     heading: string;
     bio1: string;
-    bio2: string;
     attribution: string;
   };
   preorder: {
@@ -68,7 +67,6 @@ export const translations: Record<Language, Translations> = {
     aboutAuthor: {
       heading: "About the Author",
       bio1: "Andrés is a Colombian-born writer and adventurer whose passion for exploration has taken him across continents. After years in the corporate world, he traded his desk for a motorcycle seat and never looked back.",
-      bio2: 'When he\'s not writing or riding, you can find him planning his next adventure, mentoring aspiring travelers, or sharing stories over a cup of Colombian coffee. "Un Andrés Más" is his debut book, born from the belief that we all have an "other Andrés" inside us—a version of ourselves waiting to break free.',
       attribution: "Written by: Carolina Florez",
     },
     preorder: {
@@ -112,7 +110,6 @@ export const translations: Record<Language, Translations> = {
     aboutAuthor: {
       heading: "Sobre el Autor",
       bio1: "Andrés David Serrano Vivas es ingeniero y un apasionado viajero en moto. Desde joven ha sentido una curiosidad profunda por entender cómo funcionan las cosas, las máquinas, las personas y la vida misma, curiosidad que ha marcado sus rutas tanto internas como externas.",
-      bio2: "En su primer libro, Un Andrés más, comparte las memorias de su viaje en moto por Sudamérica y las lecciones que aparecieron en cada kilómetro. Con honestidad y humor, cuenta sus desafíos, aprendizajes y encuentros, incluyendo su experiencia con la dislexia, a la que él mismo llama “el dragón de tinta”.",
       attribution: "Escrito por: Carolina Florez",
     },
     preorder: {

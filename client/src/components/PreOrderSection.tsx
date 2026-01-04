@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useLanguage } from "@/lib/LanguageContext";
-import { useWaitlistForm } from "@/hooks/use-waitlist-form";
 import { Section, SectionHeading } from "@/components/ui/section";
+
+const GOOGLE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSc0GMdu5nHVcQhnMjNuPqcQWUbzWzK_jo-3kJejArSuej0k-A/viewform?usp=dialog";
 
 export default function PreOrderSection() {
   const { t } = useLanguage();
-  const { email, setEmail, isSubmitting, handleSubmit } = useWaitlistForm();
 
   // Hide the form when deployed to GitHub Pages (static hosting)
   if (import.meta.env.GITHUB_PAGES) {
@@ -30,29 +30,13 @@ export default function PreOrderSection() {
         {t.preorder.description}
       </p>
 
-      <form
-        onSubmit={handleSubmit}
-        className="mx-auto mb-6 flex max-w-md flex-col gap-3 sm:flex-row"
-        data-testid="form-preorder"
-      >
-        <Input
-          type="email"
-          placeholder={t.preorder.emailPlaceholder}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="flex-1"
-          data-testid="input-email"
-        />
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="px-6"
-          data-testid="button-submit-preorder"
-        >
-          {isSubmitting ? t.preorder.joiningButton : t.preorder.joinButton}
+      <div className="mx-auto mb-6 flex justify-center">
+        <Button asChild className="px-6" data-testid="button-submit-preorder">
+          <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+            {t.preorder.joinButton}
+          </a>
         </Button>
-      </form>
+      </div>
 
       <p
         className="text-sm text-muted-foreground"

@@ -1,24 +1,24 @@
-import {
-  InstagramIcon,
-  FacebookIcon,
-  XIcon,
-} from "@/components/icons/SocialIcons";
+import { InstagramIcon, FacebookIcon } from "@/components/icons/SocialIcons";
 import type { Language } from "./translations";
 
 export const SITE_CONFIG = {
   title: "Un Andrés Más",
-  email: "hello@unandreasmas.com",
+  email: "andres.david.s117@gmail.com",
 } as const;
 
 export const SOCIAL_LINKS = [
   {
     name: "Instagram",
     icon: InstagramIcon,
-    href: "#",
+    href: "https://www.instagram.com/andres.david.sv/",
     testId: "link-instagram",
   },
-  { name: "Facebook", icon: FacebookIcon, href: "#", testId: "link-facebook" },
-  { name: "X", icon: XIcon, href: "#", testId: "link-twitter" },
+  {
+    name: "Facebook",
+    icon: FacebookIcon,
+    href: "https://www.facebook.com/ads.f117",
+    testId: "link-facebook",
+  },
 ] as const;
 
 export const NAV_SECTIONS = [

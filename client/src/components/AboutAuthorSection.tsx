@@ -34,7 +34,6 @@ export default function AboutAuthorSection() {
 
       <div className="space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
         <p data-testid="text-author-bio-1">{t.aboutAuthor.bio1}</p>
-        <p data-testid="text-author-bio-2">{t.aboutAuthor.bio2}</p>
         <p
           className="pt-4 text-sm font-medium italic text-foreground/80 md:text-base"
           data-testid="text-author-attribution"
