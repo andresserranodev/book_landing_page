@@ -7,11 +7,11 @@ export default function Footer() {
 
   return (
     <footer
-      className="py-12 bg-card border-t border-border"
+      className="border-t border-border bg-card py-12"
       data-testid="section-footer"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
           <div className="text-center md:text-left">
             <h3
               className="font-serif text-xl font-bold text-foreground"
@@ -19,7 +19,7 @@ export default function Footer() {
             >
               {SITE_CONFIG.title}
             </h3>
-            <p className="text-sm text-muted-foreground mt-1">
+            <p className="mt-1 text-sm text-muted-foreground">
               {t.footer.tagline}
             </p>
           </div>
@@ -35,7 +35,7 @@ export default function Footer() {
                 data-testid={link.testId}
               >
                 <a href={link.href} target="_blank" rel="noopener noreferrer">
-                  <link.icon className="w-5 h-5" />
+                  <link.icon className="h-5 w-5" />
                 </a>
               </Button>
             ))}
@@ -50,7 +50,7 @@ export default function Footer() {
             </p>
             <a
               href={`mailto:${SITE_CONFIG.email}`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               data-testid="link-email"
             >
               {SITE_CONFIG.email}

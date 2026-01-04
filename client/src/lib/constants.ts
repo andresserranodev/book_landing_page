@@ -18,7 +18,9 @@ export const NAV_SECTIONS = [
   { id: "preorder", translationKey: "preorder" as const },
 ] as const;
 
-export const JOURNEY_STATS: Record<Language, { distance: string }> & { countries: number } = {
+export const JOURNEY_STATS: Record<Language, { distance: string }> & {
+  countries: number;
+} = {
   en: { distance: "15,000" },
   es: { distance: "24,000" },
   countries: 7,

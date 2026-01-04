@@ -1,23 +1,21 @@
-import { rest } from 'msw';
+import { http, HttpResponse } from "msw";
 
 export const handlers = [
-  rest.get('/api/users/:id', (req, res, ctx) => {
-    return res(
-      ctx.json({
-        id: req.params.id,
-        username: 'testuser',
-      })
-    );
+  http.get("/api/users/:id", ({ params }) => {
+    return HttpResponse.json({
+      id: params.id,
+      username: "testuser",
+    });
   }),
 
-  rest.post('/api/users', async (req, res, ctx) => {
-    const body = await req.json();
-    return res(
-      ctx.status(201),
-      ctx.json({
-        id: '123',
+  http.post("/api/users", async ({ request }) => {
+    const body = (await request.json()) as Record<string, unknown>;
+    return HttpResponse.json(
+      {
+        id: "123",
         ...body,
-      })
+      },
+      { status: 201 }
     );
   }),
 ];

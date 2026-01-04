@@ -1,20 +1,20 @@
-import { renderHook, act } from '@testing-library/react';
-import { useIsMobile } from './use-mobile';
+import { renderHook, act } from "@testing-library/react";
+import { useIsMobile } from "./use-mobile";
 
-describe('useIsMobile', () => {
+describe("useIsMobile", () => {
   const MOBILE_BREAKPOINT = 768;
 
   beforeEach(() => {
     // Reset window.innerWidth
-    Object.defineProperty(window, 'innerWidth', {
+    Object.defineProperty(window, "innerWidth", {
       writable: true,
       configurable: true,
       value: 1024,
     });
   });
 
-  it('returns false for desktop viewport (>= 768px)', () => {
-    Object.defineProperty(window, 'innerWidth', {
+  it("returns false for desktop viewport (>= 768px)", () => {
+    Object.defineProperty(window, "innerWidth", {
       writable: true,
       configurable: true,
       value: 1024,
@@ -26,8 +26,8 @@ describe('useIsMobile', () => {
     expect(result.current).toBe(false);
   });
 
-  it('returns true for mobile viewport (< 768px)', () => {
-    Object.defineProperty(window, 'innerWidth', {
+  it("returns true for mobile viewport (< 768px)", () => {
+    Object.defineProperty(window, "innerWidth", {
       writable: true,
       configurable: true,
       value: 375,
@@ -38,8 +38,8 @@ describe('useIsMobile', () => {
     expect(result.current).toBe(true);
   });
 
-  it('returns false at exact breakpoint (768px)', () => {
-    Object.defineProperty(window, 'innerWidth', {
+  it("returns false at exact breakpoint (768px)", () => {
+    Object.defineProperty(window, "innerWidth", {
       writable: true,
       configurable: true,
       value: MOBILE_BREAKPOINT,
@@ -50,8 +50,8 @@ describe('useIsMobile', () => {
     expect(result.current).toBe(false);
   });
 
-  it('returns true at one pixel below breakpoint (767px)', () => {
-    Object.defineProperty(window, 'innerWidth', {
+  it("returns true at one pixel below breakpoint (767px)", () => {
+    Object.defineProperty(window, "innerWidth", {
       writable: true,
       configurable: true,
       value: MOBILE_BREAKPOINT - 1,
@@ -62,7 +62,7 @@ describe('useIsMobile', () => {
     expect(result.current).toBe(true);
   });
 
-  it('responds to media query changes', () => {
+  it("responds to media query changes", () => {
     // Setup a more dynamic mock for matchMedia
     let matches = false;
     const listeners: Array<() => void> = [];
@@ -83,7 +83,7 @@ describe('useIsMobile', () => {
       dispatchEvent: jest.fn(),
     }));
 
-    Object.defineProperty(window, 'innerWidth', {
+    Object.defineProperty(window, "innerWidth", {
       writable: true,
       configurable: true,
       value: 1024,
@@ -96,24 +96,24 @@ describe('useIsMobile', () => {
 
     // Simulate resize to mobile
     act(() => {
-      Object.defineProperty(window, 'innerWidth', {
+      Object.defineProperty(window, "innerWidth", {
         writable: true,
         configurable: true,
         value: 375,
       });
       matches = true;
-      listeners.forEach(listener => listener());
+      listeners.forEach((listener) => listener());
     });
 
     expect(result.current).toBe(true);
   });
 
-  it('cleans up event listener on unmount', () => {
+  it("cleans up event listener on unmount", () => {
     const removeListenerSpy = jest.fn();
 
     window.matchMedia = jest.fn().mockReturnValue({
       matches: false,
-      media: '(max-width: 767px)',
+      media: "(max-width: 767px)",
       onchange: null,
       addListener: jest.fn(),
       removeListener: jest.fn(),

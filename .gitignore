@@ -1,1 +1,5 @@
 node_modules
+
+# Linting/Formatting cache
+.eslintcache
+.prettierrc.cache

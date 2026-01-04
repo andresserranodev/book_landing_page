@@ -1,8 +1,8 @@
-import { renderHook, act } from '@testing-library/react';
-import { useWaitlistForm } from './use-waitlist-form';
-import { LanguageProvider } from '@/lib/LanguageContext';
-import { QueryClientProvider } from '@tanstack/react-query';
-import { queryClient } from '@/lib/queryClient';
+import { renderHook, act } from "@testing-library/react";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { LanguageProvider } from "@/lib/LanguageContext";
+import { queryClient } from "@/lib/queryClient";
+import { useWaitlistForm } from "./use-waitlist-form";
 
 function Wrapper({ children }: { children: React.ReactNode }) {
   return (
@@ -12,37 +12,45 @@ function Wrapper({ children }: { children: React.ReactNode }) {
   );
 }
 
-describe('useWaitlistForm', () => {
+describe("useWaitlistForm", () => {
   beforeEach(() => {
     jest.clearAllMocks();
     localStorage.clear();
   });
 
-  it('initializes with empty email and not submitting', () => {
-    const { result } = renderHook(() => useWaitlistForm(), { wrapper: Wrapper });
+  it("initializes with empty email and not submitting", () => {
+    const { result } = renderHook(() => useWaitlistForm(), {
+      wrapper: Wrapper,
+    });
 
-    expect(result.current.email).toBe('');
+    expect(result.current.email).toBe("");
     expect(result.current.isSubmitting).toBe(false);
   });
 
-  it('updates email when setEmail is called', () => {
-    const { result } = renderHook(() => useWaitlistForm(), { wrapper: Wrapper });
-
-    act(() => {
-      result.current.setEmail('test@example.com');
+  it("updates email when setEmail is called", () => {
+    const { result } = renderHook(() => useWaitlistForm(), {
+      wrapper: Wrapper,
     });
 
-    expect(result.current.email).toBe('test@example.com');
+    act(() => {
+      result.current.setEmail("test@example.com");
+    });
+
+    expect(result.current.email).toBe("test@example.com");
   });
 
-  it('has handleSubmit function', () => {
-    const { result } = renderHook(() => useWaitlistForm(), { wrapper: Wrapper });
+  it("has handleSubmit function", () => {
+    const { result } = renderHook(() => useWaitlistForm(), {
+      wrapper: Wrapper,
+    });
 
-    expect(typeof result.current.handleSubmit).toBe('function');
+    expect(typeof result.current.handleSubmit).toBe("function");
   });
 
-  it('handleSubmit is async function', () => {
-    const { result } = renderHook(() => useWaitlistForm(), { wrapper: Wrapper });
+  it("handleSubmit is async function", () => {
+    const { result } = renderHook(() => useWaitlistForm(), {
+      wrapper: Wrapper,
+    });
     const mockEvent = {
       preventDefault: jest.fn(),
     } as any;

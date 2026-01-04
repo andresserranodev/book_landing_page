@@ -25,6 +25,65 @@ npm run db:push      # Push schema changes to PostgreSQL using Drizzle Kit
 
 Database schema is defined in `shared/schema.ts` and managed via Drizzle ORM. Migrations are stored in `./migrations`.
 
+### Code Quality
+
+This project uses ESLint 9 (flat config) and Prettier for code quality and consistent formatting:
+
+```bash
+npm run lint          # Check for linting errors
+npm run lint:fix      # Auto-fix linting errors
+npm run format        # Format all files with Prettier
+npm run format:check  # Verify formatting (CI)
+npm run validate      # Run all checks (TypeScript + Lint + Format + Tests)
+```
+
+**Pre-commit Hooks**: husky + lint-staged automatically lint and format staged files before commits.
+
+**Editor Integration**: VS Code users get automatic formatting on save (recommended extensions: ESLint, Prettier, Tailwind CSS IntelliSense).
+
+**Configuration Files**:
+
+- `eslint.config.js` - ESLint flat config with React/TypeScript/Node rules
+- `.prettierrc.json` - Prettier formatting options (double quotes, semicolons, Tailwind sorting)
+- `.prettierignore` - Files excluded from formatting
+- `.husky/pre-commit` - Pre-commit hook configuration
+
+**Path Aliases**: ESLint understands `@/*`, `@shared/*`, and `@assets/*` aliases via TypeScript resolver.
+
+## Development Principles
+
+All code generated for this project must adhere to these core software engineering principles:
+
+### DRY (Don't Repeat Yourself)
+
+- Avoid code duplication by extracting common logic into reusable functions, hooks, or components
+- Use shared types and schemas from `shared/schema.ts`
+- Leverage existing utility functions in `client/src/lib/utils.ts`
+- Create custom hooks for repeated React patterns
+
+### YAGNI (You Aren't Gonna Need It)
+
+- Implement only what is explicitly required by the current task
+- Avoid adding speculative features, extra configuration options, or "future-proofing"
+- Don't create abstractions until there's a proven need (prefer 3+ uses before abstracting)
+- Keep solutions simple and focused on immediate requirements
+
+### SOLID Principles
+
+- **Single Responsibility**: Each component, function, or module should have one clear purpose
+- **Open/Closed**: Components should be open for extension (via props/composition) but closed for modification
+- **Liskov Substitution**: Derived components should be substitutable for their base types
+- **Interface Segregation**: Prefer multiple specific prop interfaces over large generic ones
+- **Dependency Inversion**: Depend on abstractions (hooks, context) rather than concrete implementations
+
+### Practical Application
+
+- Before creating a new component, check if existing components can be composed or extended
+- Before adding a prop/parameter, verify it's needed for the current task (not hypothetical future needs)
+- Keep functions small and focused (ideally < 20 lines)
+- Use TypeScript's type system to enforce contracts and prevent errors
+- Favor composition over inheritance (React functional components + hooks)
+
 ## Architecture
 
 ### Monorepo Structure

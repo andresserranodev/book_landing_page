@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
+import { cn } from "@/lib/utils";
 
 interface LanguageToggleProps {
-  variant?: "light" | "dark";
+  className?: string;
 }
 
-export default function LanguageToggle({ variant = "dark" }: LanguageToggleProps) {
+export default function LanguageToggle({ className }: LanguageToggleProps) {
   const { language, setLanguage } = useLanguage();
 
   const toggleLanguage = () => {
@@ -17,11 +18,7 @@ export default function LanguageToggle({ variant = "dark" }: LanguageToggleProps
       variant="ghost"
       size="sm"
       onClick={toggleLanguage}
-      className={
-        variant === "light"
-          ? "text-white/80 hover:text-white hover:bg-white/10"
-          : ""
-      }
+      className={cn(className)}
       data-testid="button-language-toggle"
       aria-label={`Switch to ${language === "en" ? "Spanish" : "English"}`}
     >
