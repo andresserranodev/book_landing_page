@@ -27,29 +27,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        env:
-          PUBLIC_URL: /Patagonia-Pages
-        run: npm run build
-
-      - name: Show build output (debug)
-        run: |
-          ls -la dist/public || true
-          head -n 20 [index.html](http://_vscodecontentref_/1) || true
-
-      - name: Add SPA fallback (copy index.html -> 404.html)
-        run: |
-          if [ -f dist/public/index.html ]; then
-          cp dist/public/index.html dist/public/404.html
-          echo "Copied index.html to 404.html"
-          else
-            echo "ERROR: dist/public/index.html not found" && exit 1
-          fi
+      - name: Build for GitHub Pages
+        run: npm run build:gh-pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
