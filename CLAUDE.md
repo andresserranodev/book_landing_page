@@ -84,6 +84,208 @@ All code generated for this project must adhere to these core software engineeri
 - Use TypeScript's type system to enforce contracts and prevent errors
 - Favor composition over inheritance (React functional components + hooks)
 
+## Bundle Optimization & Performance
+
+This project has been optimized to minimize JavaScript bundle size for better PageSpeed scores and user experience. Follow these strict guidelines to maintain optimal bundle size:
+
+### Dependency Management
+
+**CRITICAL: Before adding ANY new dependency, ask yourself:**
+
+1. **Is it absolutely necessary?** Can the functionality be implemented with existing dependencies or vanilla code?
+2. **What's the bundle size impact?** Check the package size on [Bundlephobia](https://bundlephobia.com/)
+3. **Is it tree-shakeable?** Modern ES modules that support tree-shaking are preferred
+4. **Are there lighter alternatives?** Always prefer smaller, focused libraries over heavy monolithic ones
+
+**Current optimized dependencies (20 packages):**
+
+```
+Core: react, react-dom, wouter, @tanstack/react-query
+UI Primitives: @radix-ui/react-{avatar,slot,toast,tooltip}
+Utilities: clsx, class-variance-authority, tailwind-merge, tailwindcss-animate
+Icons: lucide-react (tree-shakeable, import only what you need)
+Carousel: embla-carousel-react
+Backend: express, pg, drizzle-orm, drizzle-zod, zod, zod-validation-error
+```
+
+**Previously removed heavy dependencies (never re-add unless absolutely necessary):**
+
+- ❌ `framer-motion` (~30 KB) - Use CSS animations or Tailwind Animate instead
+- ❌ `recharts` (~50 KB) - Use lightweight chart libraries or CSS-based charts
+- ❌ `react-day-picker` (~15 KB) - Use native `<input type="date">` when possible
+- ❌ `react-icons` - Replaced with inline SVG or lucide-react
+- ❌ `react-hook-form` + `@hookform/resolvers` - Use native form handling for simple forms
+- ❌ Form/chart/calendar component libraries - Only add if truly needed
+
+### Icon Usage Guidelines
+
+**Preferred approach: lucide-react (tree-shakeable)**
+
+```tsx
+// ✅ GOOD: Import only specific icons (tree-shakeable)
+import { Menu, X, AlertCircle } from "lucide-react";
+
+// ❌ BAD: Importing entire icon library
+import * as Icons from "lucide-react";
+
+// ❌ NEVER: Using react-icons or other heavy icon libraries
+import { FaFacebook } from "react-icons/fa";
+```
+
+**For social media icons or SVG assets:**
+
+```tsx
+// ✅ GOOD: Inline SVG components (zero bundle impact)
+// See: client/src/components/icons/SocialIcons.tsx
+export function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
+  return <svg {...props}>{/* SVG path */}</svg>;
+}
+```
+
+### shadcn/ui Component Management
+
+**IMPORTANT: Only keep components that are actively used in the codebase.**
+
+**Currently used UI components (9 total):**
+
+- `avatar.tsx` - Used in AboutAuthorSection
+- `button.tsx` - Used throughout (Navigation, Hero, Footer, etc.)
+- `card.tsx` - Used in NotFound page
+- `carousel.tsx` - Used in AboutBookSection (BookPreviewCarousel)
+- `input.tsx` - Used in PreOrderSection
+- `section.tsx` - Custom component, used in multiple sections
+- `toast.tsx` + `toaster.tsx` - Used for notifications
+- `tooltip.tsx` - Used globally
+
+**Before adding a new shadcn/ui component:**
+
+1. Check if you can achieve the same UI with existing components
+2. If you must add it, run: `npx shadcn@latest add <component-name>`
+3. Document the usage in this file
+4. NEVER add components "just in case" - follow YAGNI principle
+
+**Audit UI components regularly:**
+
+```bash
+# Find unused UI components
+for comp in client/src/components/ui/*.tsx; do
+  name=$(basename "$comp" .tsx)
+  if ! grep -rq "from \"@/components/ui/$name\"" client/src --exclude-dir=ui; then
+    echo "UNUSED: $name"
+  fi
+done
+```
+
+### Build Configuration
+
+**vite.config.ts optimizations (DO NOT REMOVE):**
+
+```typescript
+build: {
+  minify: "terser",  // Terser produces smaller output than esbuild
+  terserOptions: {
+    compress: {
+      drop_console: true,      // Remove console.log in production
+      drop_debugger: true,
+      pure_funcs: ["console.log", "console.info"],
+    },
+  },
+  rollupOptions: {
+    output: {
+      manualChunks: {
+        vendor: ["react", "react-dom"],      // Separate vendor chunk
+        router: ["wouter"],                  // Small router chunk
+        query: ["@tanstack/react-query"],   // React Query chunk
+      },
+    },
+  },
+  chunkSizeWarningLimit: 600,  // Warn if chunks exceed 600 KB
+}
+```
+
+### Performance Monitoring
+
+**After any dependency changes, verify bundle size:**
+
+```bash
+# Build and check bundle sizes
+GITHUB_PAGES=true npm run build
+
+# Look for these metrics in build output:
+# - Main bundle (index-*.js) should be < 150 KB (< 50 KB gzipped)
+# - Vendor chunk should be < 150 KB (< 50 KB gzipped)
+# - Total initial load should be < 110 KB gzipped
+```
+
+**Test with PageSpeed Insights:**
+
+```bash
+# After deployment, test at:
+https://pagespeed.web.dev/
+
+# Target scores:
+# - Performance: > 90
+# - Unused JavaScript: < 50 KB
+# - LCP (Largest Contentful Paint): < 2.5s
+# - FCP (First Contentful Paint): < 1.8s
+```
+
+### Code Splitting Best Practices
+
+**Lazy load routes when adding new pages:**
+
+```tsx
+// ✅ GOOD: Lazy-loaded routes
+import { lazy, Suspense } from "react";
+const AdminPage = lazy(() => import("@/pages/Admin"));
+
+// In router:
+<Suspense fallback={<div>Loading...</div>}>
+  <Route path="/admin" component={AdminPage} />
+</Suspense>;
+
+// ❌ BAD: Eager loading all routes
+import AdminPage from "@/pages/Admin";
+```
+
+**Dynamic imports for heavy features:**
+
+```tsx
+// ✅ GOOD: Load chart library only when needed
+const loadChart = async () => {
+  const { Chart } = await import("./Chart");
+  return Chart;
+};
+
+// ❌ BAD: Import chart library at top level
+import { Chart } from "./Chart";
+```
+
+### Bundle Size Targets
+
+**Hard limits (fail build if exceeded):**
+
+- Individual chunk: < 600 KB uncompressed
+- Main bundle: < 150 KB uncompressed (< 50 KB gzipped)
+- Initial load (sum of critical chunks): < 350 KB uncompressed (< 110 KB gzipped)
+
+**If build size increases:**
+
+1. Run bundle analysis: `npm run build -- --mode=analyze` (after adding vite-bundle-visualizer)
+2. Identify the culprit dependency or component
+3. Find lighter alternatives or implement custom solution
+4. Never compromise bundle size for convenience
+
+### Pre-deployment Checklist
+
+Before merging any PR that modifies dependencies or adds components:
+
+- [ ] Run `npm run build` and verify bundle sizes haven't increased significantly
+- [ ] Check that only necessary dependencies are in `package.json`
+- [ ] Verify all imported components/functions are actually used
+- [ ] Test PageSpeed Insights score on preview deployment
+- [ ] Document any new dependencies or UI components in this file
+
 ## Architecture
 
 ### Monorepo Structure
@@ -183,7 +385,7 @@ attached_assets/ # Static assets (images)
 - Tailwind CSS with custom config in `tailwind.config.ts`
 - PostCSS for processing (config in `postcss.config.js`)
 - shadcn/ui configuration in `components.json`
-- Tailwind Animate + Framer Motion for animations
+- Tailwind Animate for animations (CSS-based, zero JS overhead)
 
 ### Routing
 
