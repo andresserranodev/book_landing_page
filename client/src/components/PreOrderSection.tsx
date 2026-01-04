@@ -4,9 +4,15 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { useWaitlistForm } from "@/hooks/use-waitlist-form";
 import { Section, SectionHeading } from "@/components/ui/section";
 
+const isGitHubPages = import.meta.env.GITHUB_PAGES;
+
 export default function PreOrderSection() {
   const { t } = useLanguage();
   const { email, setEmail, isSubmitting, handleSubmit } = useWaitlistForm();
+
+  if (isGitHubPages) {
+    return null;
+  }
 
   return (
     <Section

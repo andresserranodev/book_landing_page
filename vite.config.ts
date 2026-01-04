@@ -3,7 +3,13 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
+  base: process.env.GITHUB_PAGES === "true" ? "/Patagonia-Pages/" : "/",
   plugins: [react()],
+  define: {
+    "import.meta.env.GITHUB_PAGES": JSON.stringify(
+      process.env.GITHUB_PAGES === "true"
+    ),
+  },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
