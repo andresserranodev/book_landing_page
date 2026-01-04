@@ -44,7 +44,12 @@ jobs:
 
       - name: Add SPA fallback (copy index.html -> 404.html)
         run: |
-          cp [index.html](http://_vscodecontentref_/2) dist/public/404.html
+          if [ -f dist/public/index.html ]; then
+          cp dist/public/index.html dist/public/404.html
+          echo "Copied index.html to 404.html"
+          else
+            echo "ERROR: dist/public/index.html not found" && exit 1
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
