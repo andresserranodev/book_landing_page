@@ -94,7 +94,7 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: "Un Andrés Más",
       subtitle: "Un Viaje en Moto desde Colombia hasta la Patagonia",
-      preorderButton: "Pre-ordenar Ahora",
+      preorderButton: "Reservar ahora",
     },
     aboutBook: {
       heading: "Sobre el Libro",
