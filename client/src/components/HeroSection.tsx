@@ -1,5 +1,5 @@
-// @ts-expect-error - vite-imagetools query params not recognized by TS module resolution
-import heroImage from "@assets/Cotopaxi_1764948376653.jpg?format=webp&w=1920&quality=80";
+import heroDesktop from "@assets/hero_cotopaxi_desktop.webp";
+import heroMobile from "@assets/hero_cotopaxi_mobile.webp";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -12,11 +12,15 @@ export default function HeroSection() {
       className="relative flex min-h-[80vh] items-center justify-center overflow-hidden"
       data-testid="section-hero"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-        aria-hidden="true"
-      />
+      <picture className="absolute inset-0">
+        <source media="(min-width: 768px)" srcSet={heroDesktop} />
+        <img
+          src={heroMobile}
+          alt=""
+          className="h-full w-full object-cover object-center"
+          aria-hidden="true"
+        />
+      </picture>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">

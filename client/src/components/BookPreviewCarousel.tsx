@@ -1,7 +1,7 @@
 // @ts-expect-error - vite-imagetools query params not recognized by TS module resolution
-import bookCover from "@assets/Cover_WIP_1764948752780.jpg?format=webp;jpg&w=600&quality=80";
+import bookCover from "@assets/book_cover.webp?format=webp;jpg&w=600&quality=80";
 // @ts-expect-error - vite-imagetools query params not recognized by TS module resolution
-import epubPreview from "@assets/EPUB_IMG-20250203-WA0002.jpg?format=webp;jpg&w=600&quality=80";
+import epubPreview from "@assets/book_epub_preview.webp?format=webp;jpg&w=600&quality=80";
 import {
   Carousel,
   CarouselContent,

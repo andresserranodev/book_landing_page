@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     imagetools({
+      exclude: /\.webp$/,  // Exclude .webp files (already optimized)
       defaultDirectives: () => {
         // Apply default optimizations to all images
         return new URLSearchParams({
@@ -53,6 +54,14 @@ export default defineConfig({
     chunkSizeWarningLimit: 600,
   },
   server: {
+    port: 5001,
+    strictPort: false,
+    hmr: {
+      protocol: "ws",
+      host: "localhost",
+      port: 5001,
+      clientPort: 5001,
+    },
     fs: {
       strict: true,
       deny: ["**/.*"],

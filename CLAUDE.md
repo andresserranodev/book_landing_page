@@ -352,6 +352,45 @@ attached_assets/ # Static assets (images)
 - **Components**: Built on Radix UI primitives via shadcn/ui
 - See `design_guidelines.md` for complete design specifications
 
+## Image Optimization & SEO Guidelines
+
+### 1. Alt Text Strategy (SEO & Marketing)
+
+All `alt` attributes must be written in **Spanish** and follow these strict rules to maximize SEO for the book:
+
+- **Contextual:** Describe the image connecting it to the narrative of the book _"Un Andrés Más"_.
+- **Keywords:** Include terms like: _Viaje en moto por Sudamérica, Patagonia, Kawasaki Versys, Libro de viajes, Aventura en moto_.
+- **Prohibitions:**
+  - **DO NOT** include camera or drone brands (e.g., "DJI Mini", "GoPro", "Sony").
+  - **DO NOT** use generic descriptions (e.g., "mountain", "view", "motorcycle").
+  - **DO NOT** leave the `alt` tag empty if the image is part of the story.
+
+**Correct Example:**
+`alt="Andrés conduciendo su moto por el Salar de Uyuni - Escena del libro Un Andrés Más"`
+
+**Incorrect Example:**
+`alt="aerial shot dji mavic 2 salt desert"`
+
+### 2. Performance & Core Web Vitals (Technical)
+
+To ensure a PageSpeed score of 90-100, apply the following logic to all `<img>` tags:
+
+- **Hero Image (Above the Fold):**
+  - This applies to the first image the user sees without scrolling (e.g., cover or main background).
+  - **Must include:** `loading="eager"`
+  - **Must include:** `fetchPriority="high"`
+  - **Goal:** Optimize LCP (Largest Contentful Paint).
+
+- **Secondary Images (Below the Fold):**
+  - Applies to any image that requires scrolling to be seen (e.g., author bio, gallery, footer).
+  - **Must include:** `loading="lazy"`
+  - **Forbidden:** Do NOT use `fetchPriority` on these images.
+  - **Goal:** Save bandwidth and speed up initial rendering.
+
+- **Formats & Responsiveness:**
+  - Always prioritize modern formats (`.webp` or `.avif`) over `.jpg` or `.png`.
+  - Use the `<picture>` tag (or Astro's `<Picture />` component) to serve distinct image sizes for Mobile vs. Desktop.
+
 ## Important Implementation Details
 
 ### Server Configuration

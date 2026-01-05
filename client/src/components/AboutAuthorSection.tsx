@@ -1,5 +1,5 @@
 // @ts-expect-error - vite-imagetools query params not recognized by TS module resolution
-import authorPhotos from "@assets/autorBW_1764948728536.jpeg?format=webp;jpg&w=400&quality=80";
+import authorPhotos from "@assets/author_photo.webp?format=webp;jpg&w=400&quality=80";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Section, SectionHeading } from "@/components/ui/section";
